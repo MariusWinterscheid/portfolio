@@ -11,5 +11,14 @@ body {
 
     font-family: "Syne", sans-serif;
 
-    background-color: $colorBackground;   
+    background-color: $colorBackground;  
+}
+
+h3{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
