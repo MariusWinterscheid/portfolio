@@ -26,6 +26,12 @@ import { NavComponent } from '../nav/nav.component';
 })
 export class HeaderComponent {
 
+  onClickBurgerMenu(){
+    this.animateBurgerMenu();
+    this.toogleLenSwitcherVisibility();
+    //Function for open or close the navbar
+  }
+
   onClickLenSwitcher(){
     const lenSwitcherEn = document.getElementById('lenSwitcherEn') as HTMLImageElement;
     const lenSwitcherDe = document.getElementById('lenSwitcherDe') as HTMLImageElement;
@@ -37,12 +43,6 @@ export class HeaderComponent {
     isLenEn = !isLenEn;
 
     console.log('Language switched to: ' + (isLenEn ? 'English' : 'German'));
-  }
-
-  onClickBurgerMenu(){
-    this.animateBurgerMenu();
-    this.toogleLenSwitcherVisibility();
-    //Function for open or close the navbar
   }
 
   toogleLenSwitcherVisibility(){

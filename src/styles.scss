@@ -5,6 +5,11 @@
     src: url("assets/fonts/syne/Syne-VariableFont_wght.ttf") format("trueType");
 }
 
+@font-face {
+    font-family: "Overpass";
+    src: url("assets/fonts/overpass/Overpass-VariableFont_wght.ttf") format("trueType");
+}
+
 body {
     margin: 0;
     padding: 0 $paddingMainSite;
