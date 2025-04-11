@@ -15,7 +15,7 @@ const IMAGES_BURGER_MENU_CLOSE = [
 ];
 
 import { Component } from '@angular/core';
-import { NavComponent } from '../nav/nav.component';
+import { NavComponent } from './nav/nav.component';
 
 @Component({
   selector: 'app-header',

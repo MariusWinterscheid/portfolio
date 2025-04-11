@@ -1,4 +1,4 @@
-@import '../../assets/models/styleVariables.scss';
+@import '../../../assets/models/styleVariables.scss';
 
 
 .nav-main {
@@ -6,7 +6,7 @@
     height: 100dvh;
 
     position: absolute;
-    top: 0;
+    top: 100dvh;
     left: 0;
     right: 0;
     bottom: 0;
