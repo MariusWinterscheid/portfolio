@@ -36,8 +36,53 @@
     gap: 35px;
 
     .nav-item{
+        width: 60%;
+
+        position: relative;
+
+        padding: 24px 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h3{
+            line-height: 100%;
+            font-size: 45px;
+        }
+
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+
+            border: 2px solid $colorPrimary;
+            transition: all 0.125s ease-in-out;            
+        }
+
+        &::before{
+            height: 40px;
+            bottom: 0;
+            left: 0;
+        }
+
+        &::after{
+            width: 40px;
+            bottom: 0;
+            left: 0;
+        }
+
         &:hover{
             cursor: pointer;
+        }
+
+        &:hover::before{
+            height: 0px;
+            opacity: 0;
+        }
+
+        &:hover::after{
+            animation: raiseBorder 0.300s forwards;
         }
     }
 }
@@ -110,4 +155,16 @@
     background-color: $colorPrimary;
 
     z-index: -1;
+}
+
+@keyframes raiseBorder {
+    30% {
+        width: 30%;
+        left: 0;
+    }
+    100% {
+        left: 70%;
+        width: 30%;
+        right: 0;
+    }
 }

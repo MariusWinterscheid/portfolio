@@ -29,7 +29,7 @@ export class HeaderComponent {
   onClickBurgerMenu(){
     this.animateBurgerMenu();
     this.toogleLenSwitcherVisibility();
-    //Function for open or close the navbar
+    
   }
 
   onClickLenSwitcher(){
