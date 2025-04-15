@@ -2,10 +2,11 @@
     <img src="assets\img\icons\logo.png" alt="logo">
     <div class="lan-switcher-animation">
         <div id="lanSwitcherMain" class="lan-switcher-main">
-            <div id="lenSwitcherEn" class="lan-switcher lan-active" (click)="onClickLenSwitcher()">EN</div>
-            <div id="lenSwitcherDe" class="lan-switcher" (click)="onClickLenSwitcher()">DE</div>
+            <div id="lenSwitcherEn" [class.lan-active]="currentLang==='en'" class="lan-switcher" (click)="onClickLenSwitcher()">EN</div>
+            <div id="lenSwitcherDe" [class.lan-active]="currentLang==='de'" class="lan-switcher" (click)="onClickLenSwitcher()">DE</div>
         </div>
     </div>
     <img id="burgerMenu" (click)="onClickBurgerMenu()" src="assets\img\icons\burgerMenu.png" alt="burger menu">
 </div>
-<app-nav [isNavOpen]="true" [currentLang]="'de'"></app-nav>
+<!-- <app-nav *ngIf="isNavOpen" [currentLang]="currentLang"></app-nav> -->
+<app-nav [isNavOpen]="isNavOpen" [currentLang]="currentLang"></app-nav>

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
-
-let isNavOpen = false;
-let currentLang: 'en' | 'de' = 'en';
+import { CommonModule } from '@angular/common';
 
 const IMAGES_BURGER_MENU_OPEN = [
   'assets/img/icons/burgerMenuTransition/open/burgerMenuOpen1.png',
@@ -20,11 +18,13 @@ const IMAGES_BURGER_MENU_CLOSE = [
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NavComponent],
+  imports: [CommonModule,NavComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  isNavOpen = false;
+  currentLang: 'en' | 'de' = 'en';
 
   constructor() {}
 
@@ -43,15 +43,15 @@ export class HeaderComponent {
     lenSwitcherEn.classList.toggle('lan-active');
     lenSwitcherDe.classList.toggle('lan-active');
 
-    currentLang = currentLang === 'en' ? 'de' : 'en';
+    this.currentLang = this.currentLang === 'en' ? 'de' : 'en';
 
-    console.log('Language switched to: ' + (currentLang === 'en' ? 'English' : 'German'));
+    console.log('Language switched to: ' + (this.currentLang === 'en' ? 'English' : 'German'));
   }
 
   toogleLenSwitcherVisibility(){
     const lenSwitcherMain = document.getElementById('lanSwitcherMain') as HTMLImageElement;
     if (!lenSwitcherMain) return;
-    lenSwitcherMain.style.left = isNavOpen ? '0' : '150dvw';
+    lenSwitcherMain.style.left = this.isNavOpen ? '0' : '150dvw';
   }
 
   animateBurgerMenu(){
@@ -61,12 +61,12 @@ export class HeaderComponent {
     if (!burgerMenu) return;
     this.playAnimationBurgerMenu(path, burgerMenu);
 
-    isNavOpen = !isNavOpen;
-    console.log('Navbar is now ' + (isNavOpen ? 'open' : 'closed'));
+    this.isNavOpen = !this.isNavOpen;
+    console.log('Navbar is now ' + (this.isNavOpen ? 'open' : 'closed'));
   }
 
   playAnimationBurgerMenu(path: string, burgerMenu: HTMLImageElement) {
-    const choosenArray = isNavOpen ? IMAGES_BURGER_MENU_CLOSE : IMAGES_BURGER_MENU_OPEN;
+    const choosenArray = this.isNavOpen ? IMAGES_BURGER_MENU_CLOSE : IMAGES_BURGER_MENU_OPEN;
     for (let i = 0; i < choosenArray.length; i++) {
       setTimeout(() => {
         path = choosenArray[i];

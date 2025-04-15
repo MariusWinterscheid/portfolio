@@ -1,4 +1,4 @@
-<div class="nav-main">
+<div class="nav-main" [ngClass]="{ 'is-open': isNavOpen }">
     <div class="nav-items">
         @for (item of txtNav; track item.title) {
             <div class="nav-item">
