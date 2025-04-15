@@ -1,6 +1,8 @@
 import { Component, inject, Input } from '@angular/core';
-import { TxtproviderService } from '../../shared/services/txtprovider.service';
 import { CommonModule } from '@angular/common';
+
+import { SettingsService } from '../../shared/services/settings.service';
+import { TextService } from '../../shared/services/text.service';
 
 @Component({
   selector: 'app-nav',
@@ -14,6 +16,8 @@ export class NavComponent {
   @Input() isNavOpen = false;
   @Input() currentLang: 'en' | 'de' = 'en';
 
-  txtService = inject(TxtproviderService);
-  txtNav = this.txtService.navtxt;
+  txtService = inject(TextService);
+  txtNav = this.txtService.txtNav;
+
+  settingsService = inject(SettingsService);
 }

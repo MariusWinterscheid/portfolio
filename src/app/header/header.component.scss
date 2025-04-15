@@ -16,6 +16,11 @@
     overflow: hidden;
 }
 
+.logo-img{
+    width: 70px;
+    height: auto;
+}
+
 #burgerMenu {
     height: 40px;
     width: 32px;
@@ -37,8 +42,8 @@
 
         position: absolute;
 
-        top: 0;
-        left: 150dvw;
+        top: -100dvh;
+        left: 0;
         right: 0;
         bottom: 0;
 

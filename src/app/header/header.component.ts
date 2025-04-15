@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { CommonModule } from '@angular/common';
+import { SettingsService } from '../shared/services/settings.service';
 
 const IMAGES_BURGER_MENU_OPEN = [
   'assets/img/icons/burgerMenuTransition/open/burgerMenuOpen1.png',
@@ -18,43 +19,44 @@ const IMAGES_BURGER_MENU_CLOSE = [
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule,NavComponent],
+  imports: [CommonModule, NavComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   isNavOpen = false;
-  currentLang: 'en' | 'de' = 'en';
 
-  constructor() {}
+  settingsService = inject(SettingsService);
 
-  onClickBurgerMenu(){
+  constructor() { }
+
+  onClickBurgerMenu() {
     this.animateBurgerMenu();
     this.toogleLenSwitcherVisibility();
-    
+
   }
 
-  onClickLenSwitcher(){
+  onClickLenSwitcher() {
     const lenSwitcherEn = document.getElementById('lenSwitcherEn') as HTMLImageElement;
     const lenSwitcherDe = document.getElementById('lenSwitcherDe') as HTMLImageElement;
-    
+
     if (!lenSwitcherEn || !lenSwitcherDe) return;
 
     lenSwitcherEn.classList.toggle('lan-active');
     lenSwitcherDe.classList.toggle('lan-active');
 
-    this.currentLang = this.currentLang === 'en' ? 'de' : 'en';
+    this.settingsService.currentLang = this.settingsService.currentLang === 'en' ? 'de' : 'en';
 
-    console.log('Language switched to: ' + (this.currentLang === 'en' ? 'English' : 'German'));
+    console.log('Language switched to: ' + (this.settingsService.currentLang === 'en' ? 'English' : 'German'));
   }
 
-  toogleLenSwitcherVisibility(){
+  toogleLenSwitcherVisibility() {
     const lenSwitcherMain = document.getElementById('lanSwitcherMain') as HTMLImageElement;
     if (!lenSwitcherMain) return;
-    lenSwitcherMain.style.left = this.isNavOpen ? '0' : '150dvw';
+    lenSwitcherMain.style.top = this.isNavOpen ? '0' : '-100dvh';
   }
 
-  animateBurgerMenu(){
+  animateBurgerMenu() {
     let path = 'assets/img/icons/burgerMenu.png';
     const burgerMenu = document.getElementById('burgerMenu') as HTMLImageElement;
 

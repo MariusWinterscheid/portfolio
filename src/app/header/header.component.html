@@ -1,13 +1,13 @@
 <div class="header-main">
-    <img src="assets\img\icons\logo.png" alt="logo">
+    <img class="logo-img" src="assets\img\icons\logo.png" alt="logo">
     <div class="lan-switcher-animation">
         <div id="lanSwitcherMain" class="lan-switcher-main">
-            <div id="lenSwitcherEn" [class.lan-active]="currentLang==='en'" class="lan-switcher" (click)="onClickLenSwitcher()">EN</div>
-            <div id="lenSwitcherDe" [class.lan-active]="currentLang==='de'" class="lan-switcher" (click)="onClickLenSwitcher()">DE</div>
+            <div id="lenSwitcherEn" [class.lan-active]="settingsService.currentLang==='en'" class="lan-switcher" (click)="onClickLenSwitcher()">EN</div>
+            <div id="lenSwitcherDe" [class.lan-active]="settingsService.currentLang==='de'" class="lan-switcher" (click)="onClickLenSwitcher()">DE</div>
         </div>
     </div>
     <img id="burgerMenu" (click)="onClickBurgerMenu()" src="assets\img\icons\burgerMenu.png" alt="burger menu">
 </div>
 <div class="app-nav-box">
-    <app-nav [isNavOpen]="isNavOpen" [currentLang]="currentLang"></app-nav>
+    <app-nav [isNavOpen]="isNavOpen" [currentLang]="settingsService.currentLang"></app-nav>
 </div>
