@@ -8,5 +8,6 @@
     </div>
     <img id="burgerMenu" (click)="onClickBurgerMenu()" src="assets\img\icons\burgerMenu.png" alt="burger menu">
 </div>
-<!-- <app-nav *ngIf="isNavOpen" [currentLang]="currentLang"></app-nav> -->
-<app-nav [isNavOpen]="isNavOpen" [currentLang]="currentLang"></app-nav>
+<div class="app-nav-box">
+    <app-nav [isNavOpen]="isNavOpen" [currentLang]="currentLang"></app-nav>
+</div>

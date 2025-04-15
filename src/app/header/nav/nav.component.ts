@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { TxtproviderService } from '../../shared/services/txtprovider.service';
 import { CommonModule } from '@angular/common';
 
