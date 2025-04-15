@@ -1,5 +1,8 @@
+import { Component } from '@angular/core';
+import { NavComponent } from './nav/nav.component';
+
 let isNavOpen = false;
-let isLenEn = true;
+let currentLang: 'en' | 'de' = 'en';
 
 const IMAGES_BURGER_MENU_OPEN = [
   'assets/img/icons/burgerMenuTransition/open/burgerMenuOpen1.png',
@@ -14,9 +17,6 @@ const IMAGES_BURGER_MENU_CLOSE = [
   'assets/img/icons/burgerMenu.png'
 ];
 
-import { Component } from '@angular/core';
-import { NavComponent } from './nav/nav.component';
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -25,6 +25,8 @@ import { NavComponent } from './nav/nav.component';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  constructor() {}
 
   onClickBurgerMenu(){
     this.animateBurgerMenu();
@@ -35,14 +37,15 @@ export class HeaderComponent {
   onClickLenSwitcher(){
     const lenSwitcherEn = document.getElementById('lenSwitcherEn') as HTMLImageElement;
     const lenSwitcherDe = document.getElementById('lenSwitcherDe') as HTMLImageElement;
+    
     if (!lenSwitcherEn || !lenSwitcherDe) return;
 
     lenSwitcherEn.classList.toggle('lan-active');
     lenSwitcherDe.classList.toggle('lan-active');
 
-    isLenEn = !isLenEn;
+    currentLang = currentLang === 'en' ? 'de' : 'en';
 
-    console.log('Language switched to: ' + (isLenEn ? 'English' : 'German'));
+    console.log('Language switched to: ' + (currentLang === 'en' ? 'English' : 'German'));
   }
 
   toogleLenSwitcherVisibility(){
