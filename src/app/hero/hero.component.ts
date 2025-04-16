@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TextService } from '../shared/services/text.service';
+import { SettingsService } from '../shared/services/settings.service';
 
 @Component({
   selector: 'app-hero',
@@ -11,5 +12,14 @@ import { TextService } from '../shared/services/text.service';
 export class HeroComponent {
 
   txtService = inject(TextService);
-  txtHero = this.txtService.txtHero;
+  settingsService = inject(SettingsService);
+
+  constructor() { 
+    this.test();
+  }
+
+  test() {
+    console.log(this.txtService.txtHero.mainTitle.en);
+  }
+  
 }

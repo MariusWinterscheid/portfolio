@@ -1,0 +1,48 @@
+@import url('../shared/models/styleVariables.scss');
+
+.hero-main {
+    width: 100dvw;
+    height: 100dvh;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .hero-top {
+        flex: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-bottom {
+        flex: 1;
+
+        display: flex;
+        align-items: space-between;
+        justify-content: flex-end;
+    }
+}
+
+.mail-box {
+
+
+    .mail-transform {
+        transform: rotate(-90deg) translateX(-50%);
+    }
+}
+
+.call-to-action-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+        width: 50px;
+        height: auto;
+    }
+}

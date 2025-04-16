@@ -1,6 +1,18 @@
-<div>
-    <div>
-        <h1></h1>
+<div class="hero-main">
+    <div class="hero-top">
+        <div>
+            <h1>{{ this.txtService.txtHero.mainTitle[settingsService.currentLang] }}</h1>
+            <div>
+                <div></div>
+                <div>{{ this.txtService.txtHero.developer[settingsService.currentLang] }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-bottom">
+        <div class="mail-box"><div class="mail-transform"><a href="">winterscheid.edv&#64;gmail.com</a></div></div>
+        <div class="call-to-action-box">
+            <img src="assets/img/icons/arrowDown.png" alt="arrowDown">
+            <p>{{ this.txtService.txtHero.callToAction[settingsService.currentLang] }}</p>
+        </div>
     </div>
 </div>
-<div></div>
