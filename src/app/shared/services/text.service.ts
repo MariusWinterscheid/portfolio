@@ -43,6 +43,23 @@ export class TextService {
   txtAbout = {
     'title': {
       en: 'About Me',
-      de: 'Über Mich'}
+      de: 'Über Mich'
+    },
+    'text':{
+      en: 'I am a passionate Frontend Developer with a strong focus on creating user-friendly and visually appealing web applications. I have a solid understanding of HTML, CSS, and JavaScript, and I am always eager to learn new technologies and improve my skills.',
+      de: 'Ich bin ein leidenschaftlicher Frontend-Entwickler mit einem starken Fokus auf die Erstellung benutzerfreundlicher und visuell ansprechender Webanwendungen. Ich habe ein solides Verständnis von HTML, CSS und JavaScript und bin immer bestrebt, neue Technologien zu lernen und meine Fähigkeiten zu verbessern.'
+    },
+    'basedIn': {
+      en: 'Based in Kürten by Cologne',
+      de: 'Aus Kürten bei Köln'
+    },
+    'wayOfWorking': {
+      en: 'Open to work Remotely',
+      de: 'Bereit für Remote-Arbeit'
+    },
+    'btnTxt': {
+      en: "Let's Talk",
+      de: 'Kontakt'
+    }
   }
 }

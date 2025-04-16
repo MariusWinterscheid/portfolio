@@ -13,7 +13,6 @@ import { TextService } from '../../shared/services/text.service';
 })
 export class NavComponent {
 
-  @Input() isNavOpen = false;
   @Input() currentLang: 'en' | 'de' = 'en';
 
   txtService = inject(TextService);

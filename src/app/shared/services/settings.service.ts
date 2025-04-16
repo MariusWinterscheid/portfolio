@@ -8,4 +8,5 @@ export class SettingsService {
   constructor() { }
 
   currentLang: 'en' | 'de' = 'en';
+  isNavOpen = false;
 }

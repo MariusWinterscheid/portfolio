@@ -24,8 +24,6 @@ const IMAGES_BURGER_MENU_CLOSE = [
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  isNavOpen = false;
-
   settingsService = inject(SettingsService);
 
   constructor() { }
@@ -45,11 +43,11 @@ export class HeaderComponent {
     if (!burgerMenu) return;
     this.playAnimationBurgerMenu(path, burgerMenu);
 
-    this.isNavOpen = !this.isNavOpen;
+    this.settingsService.isNavOpen = !this.settingsService.isNavOpen;
   }
 
   playAnimationBurgerMenu(path: string, burgerMenu: HTMLImageElement) {
-    const choosenArray = this.isNavOpen ? IMAGES_BURGER_MENU_CLOSE : IMAGES_BURGER_MENU_OPEN;
+    const choosenArray = this.settingsService.isNavOpen ? IMAGES_BURGER_MENU_CLOSE : IMAGES_BURGER_MENU_OPEN;
     for (let i = 0; i < choosenArray.length; i++) {
       setTimeout(() => {
         path = choosenArray[i];
