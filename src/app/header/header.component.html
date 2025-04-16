@@ -1,7 +1,7 @@
 <div class="header-main">
     <img class="logo-img" src="assets\img\icons\logo.png" alt="logo">
     <div class="lan-switcher-animation">
-        <div id="lanSwitcherMain" class="lan-switcher-main">
+        <div id="lanSwitcherMain" [ngStyle]="{ top: isNavOpen ? '0' : '-100dvh' }" class="lan-switcher-main">
             <div id="lenSwitcherEn" [class.lan-active]="settingsService.currentLang==='en'" class="lan-switcher" (click)="onClickLenSwitcher()">EN</div>
             <div id="lenSwitcherDe" [class.lan-active]="settingsService.currentLang==='de'" class="lan-switcher" (click)="onClickLenSwitcher()">DE</div>
         </div>

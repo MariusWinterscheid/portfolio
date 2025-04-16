@@ -3,17 +3,13 @@ import { TextService } from '../shared/services/text.service';
 import { SettingsService } from '../shared/services/settings.service';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-about',
   standalone: true,
   imports: [],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss'
 })
-export class HeroComponent {
-
+export class AboutComponent {
   txtService = inject(TextService);
   settingsService = inject(SettingsService);
-
-  constructor() { }
-  
 }

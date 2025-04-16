@@ -27,19 +27,22 @@ export class TextService {
 
   txtHero = {
     'mainTitle': {
-      title: 'mainTitle',
       en: 'Frontend Developer',
       de: 'Frontend Entwickler'
     },
     'developer': {
-      title: 'developer',
       en: 'Marius Winterscheid',
       de: 'Marius Winterscheid'
     },
     'callToAction': {
-      title: 'callToAction',
       en: 'Scroll Down',
       de: 'Nach Unten Scrollen'
     }
+  }
+
+  txtAbout = {
+    'title': {
+      en: 'About Me',
+      de: 'Über Mich'}
   }
 }

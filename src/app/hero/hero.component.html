@@ -1,17 +1,19 @@
 <div class="hero-main">
     <div class="hero-top">
-        <div>
-            <h1>{{ this.txtService.txtHero.mainTitle[settingsService.currentLang] }}</h1>
-            <div>
-                <div></div>
-                <div>{{ this.txtService.txtHero.developer[settingsService.currentLang] }}</div>
-            </div>
+        <h1>{{ this.txtService.txtHero.mainTitle[settingsService.currentLang] }}</h1>
+        <div class="hero-subtitle">
+            <div class="subtitle-line"></div>
+            <div class="developer-txt">{{ this.txtService.txtHero.developer[settingsService.currentLang] }}</div>
         </div>
     </div>
     <div class="hero-bottom">
-        <div class="mail-box"><div class="mail-transform"><a href="">winterscheid.edv&#64;gmail.com</a></div></div>
+        <div class="mail-box">
+            <div class="mail-transform">winterscheid.edv&#64;gmail.com</div>
+        </div>
         <div class="call-to-action-box">
-            <img src="assets/img/icons/arrowDown.png" alt="arrowDown">
+            <div class="arrow-animation">
+                <div class="arrow"><img src="assets/img/icons/arrowDown.png" alt="arrowDown"></div>
+            </div>
             <p>{{ this.txtService.txtHero.callToAction[settingsService.currentLang] }}</p>
         </div>
     </div>

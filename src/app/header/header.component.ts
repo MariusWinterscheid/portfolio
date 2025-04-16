@@ -32,28 +32,10 @@ export class HeaderComponent {
 
   onClickBurgerMenu() {
     this.animateBurgerMenu();
-    this.toogleLenSwitcherVisibility();
-
   }
 
   onClickLenSwitcher() {
-    const lenSwitcherEn = document.getElementById('lenSwitcherEn') as HTMLImageElement;
-    const lenSwitcherDe = document.getElementById('lenSwitcherDe') as HTMLImageElement;
-
-    if (!lenSwitcherEn || !lenSwitcherDe) return;
-
-    lenSwitcherEn.classList.toggle('lan-active');
-    lenSwitcherDe.classList.toggle('lan-active');
-
     this.settingsService.currentLang = this.settingsService.currentLang === 'en' ? 'de' : 'en';
-
-    console.log('Language switched to: ' + (this.settingsService.currentLang === 'en' ? 'English' : 'German'));
-  }
-
-  toogleLenSwitcherVisibility() {
-    const lenSwitcherMain = document.getElementById('lanSwitcherMain') as HTMLImageElement;
-    if (!lenSwitcherMain) return;
-    lenSwitcherMain.style.top = this.isNavOpen ? '0' : '-100dvh';
   }
 
   animateBurgerMenu() {
@@ -64,7 +46,6 @@ export class HeaderComponent {
     this.playAnimationBurgerMenu(path, burgerMenu);
 
     this.isNavOpen = !this.isNavOpen;
-    console.log('Navbar is now ' + (this.isNavOpen ? 'open' : 'closed'));
   }
 
   playAnimationBurgerMenu(path: string, burgerMenu: HTMLImageElement) {

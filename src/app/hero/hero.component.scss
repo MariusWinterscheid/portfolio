@@ -1,4 +1,4 @@
-@import url('../shared/models/styleVariables.scss');
+@use '../shared/models/styleVariables.scss' as *;
 
 .hero-main {
     width: 100dvw;
@@ -11,38 +11,112 @@
     flex-direction: column;
 
     .hero-top {
-        flex: 2;
+        flex: 3;
+        width: 100%;
 
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+
+        text-align: center;
     }
 
     .hero-bottom {
         flex: 1;
+        width: 100%;
 
         display: flex;
-        align-items: space-between;
-        justify-content: flex-end;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        padding-bottom: $paddingMainSite;
+
+        font-family: 'Overpass', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.hero-subtitle {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+
+    .subtitle-line {
+        height: 3px;
+        width: 100%;
+        background-color: $colorPrimary;
+    }
+
+    .developer-txt {
+        font-family: 'Overpass', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: $colorHighlight;
+        white-space: nowrap;
     }
 }
 
 .mail-box {
+    width: 100%;
+    height: 100%;
 
+    position: relative;
 
     .mail-transform {
-        transform: rotate(-90deg) translateX(-50%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        transform: rotate(-90deg) translateY(100%);
+        transform-origin: left bottom;
     }
 }
 
 .call-to-action-box {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-direction: column;
+    width: fit-content;
+    height: 100%;
 
-    img {
-        width: 50px;
-        height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.arrow-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    .arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        
+        animation: arrowAnimation 3.2s linear infinite;
+
+        img{
+            width: 50px;
+            height: auto;
+        }
+    }
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(200%);
     }
 }
