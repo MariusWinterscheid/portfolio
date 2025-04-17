@@ -81,4 +81,15 @@ export class TextService {
       de: 'Ich bin immer bereit zu lernen'
     }
   }
+
+  txtPortfolio = {
+    'title': {
+      en: 'Portfolio',
+      de: 'Portfolio'
+    },
+    'disclaimer': {
+      en: 'Explore a selection of my work here - Interact with my projects to see my sills in action.',
+      de: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.'
+    }
+  }
 }

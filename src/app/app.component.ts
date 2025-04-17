@@ -5,6 +5,7 @@ import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from "./about/about.component";
 import { NextComponent } from './next/next.component';
 import { SkillsComponent } from './skills/skills.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { SkillsComponent } from './skills/skills.component';
     AboutComponent,
     AboutComponent,
     NextComponent,
-    SkillsComponent
+    SkillsComponent, 
+    PortfolioComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

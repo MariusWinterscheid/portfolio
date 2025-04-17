@@ -1,0 +1,86 @@
+@use '../shared/models/styleVariables.scss' as *;
+
+.portfolio-main{
+    width: 100%;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    p{
+        font-family: 'Overpass', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+    }
+}
+
+.projects-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.project-img{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+
+    p{
+        margin: 0;
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        font-size: 23px;
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.project-img-odd{
+    align-items: flex-end;
+    text-align: right;
+}
+
+.project-txt-box{
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 15px;
+
+    .project-skillset{
+        font-family: 'Overpass', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: $colorHighlight;
+    }
+
+    .project-txt{
+        font-family: 'Overpass', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
+.project-txt-box-odd{
+    align-items: flex-end;
+    text-align: right;
+}

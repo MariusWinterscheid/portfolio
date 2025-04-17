@@ -18,26 +18,45 @@ body {
 
     font-family: "Syne", sans-serif;
 
-    background-color: $colorBackground;  
+    background-color: $colorBackground;
 }
 
-h1{
+h1,
+h2,
+h3,
+h4 {
     margin: 0;
+}
+
+/* main title on hero page */
+h1 {
+    font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 45px;
 }
 
-h2{
-    margin: 0;
+/* main title on components */
+h2 {
     font-weight: 800;
     font-size: 36px;
+    text-align: center;
 }
 
-h3{
-    margin: 0;
+/* sub title on components */
+h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
 }
 
-a{
+/* nav */
+h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+a {
     text-decoration: none;
     color: inherit;
 }
