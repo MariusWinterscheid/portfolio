@@ -2,6 +2,7 @@
 
 .contact-main {
     padding: 0 $paddingMainSite;
+    padding-top: 80px;
 
     display: flex;
     align-items: center;
@@ -10,8 +11,25 @@
     gap: 40px;
 
     color: $colorBackground;
+    border: 1px solid red;
 
+    position: relative;
     overflow: hidden;
+}
+
+.bg{
+    width: 200%;
+    height: 200%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $colorPrimary;
+    z-index: -1;
+
+    transform: rotate(4deg);
+    transform-origin: top left;
+    
 }
 
 .header-bottom {
