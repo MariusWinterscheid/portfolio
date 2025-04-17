@@ -1,0 +1,22 @@
+<div class="contact-main">
+    <div class="title">{{ this.txtService.txtContact.title[settingsService.currentLang] }}</div>
+    <div class="header-bottom">
+        <div class="disclaimer">{{ this.txtService.txtContact.disclaimer[settingsService.currentLang] }}</div>
+        <div class="text">{{ this.txtService.txtContact.text[settingsService.currentLang] }}</div>
+    </div>
+    <div class="form-main">
+        <form>
+            <input type="text" required />
+            <input type="email" required />
+            <textarea required></textarea>
+
+            <label class="checkbox-container">
+                <input type="checkbox" required />
+                <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as
+                    outlined.</span>
+            </label>
+
+            <button type="submit" disabled>Say hello ;)</button>
+        </form>
+    </div>
+</div>

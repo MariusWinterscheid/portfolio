@@ -1,9 +1,9 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .hero-main {
-    width: 100dvw;
     height: 100dvh;
-    max-width: 100%;
+
+    margin: 0 $paddingMainSite;
 
     display: flex;
     align-items: center;

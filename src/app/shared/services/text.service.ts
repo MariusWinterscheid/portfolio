@@ -92,4 +92,30 @@ export class TextService {
       de: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.'
     }
   }
+
+  txtRef = {
+    'title': {
+      en: 'References',
+      de: 'Referenzen'
+    },
+    'disclaimer': {
+      en: 'Explore a selection of my work here - Interact with my projects to see my skills in action.',
+      de: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.'
+    }
+  }
+
+  txtContact = {
+    'title':{
+      en: 'Say hi!',
+      de: 'Kontakt'
+    },
+    'disclaimer':{
+      en: 'Want to discuss a new project?',
+      de: 'Haben Sie eine Projektidee?'
+    },
+    'text':{
+      en: "Say hello! Let's discuss your ideas and make it happen.",
+      de: 'Kontaktieren Sie mich! Gerne spreche ich mit Ihnen über Ihre Ideen.'
+    }
+  }
 }

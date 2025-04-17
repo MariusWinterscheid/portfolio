@@ -6,6 +6,8 @@ import { AboutComponent } from "./about/about.component";
 import { NextComponent } from './next/next.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ReferencesComponent } from './references/references.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     AboutComponent,
     NextComponent,
     SkillsComponent, 
-    PortfolioComponent
+    PortfolioComponent,
+    ReferencesComponent,
+    ContactComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

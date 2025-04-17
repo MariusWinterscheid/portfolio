@@ -1,0 +1,62 @@
+@use '../shared/models/styleVariables.scss' as *;
+
+.references-main {
+    margin: 0 $paddingMainSite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+
+    .ref-disclaimer{
+        font-family: 'Overpass', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+    }
+}
+
+.ref-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.ref {
+    min-height: 344px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 24px;
+
+    border: 4px solid $colorPrimary;
+    padding: 24px 16px;
+
+    p {
+        margin: 0;
+        font-family: 'Syne', sans-serif;
+        font-weight: 600;
+        font-size: 22px;
+    }
+}
+
+.ref-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    .ref-position{
+        font-family: 'Overpass', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+    }
+}

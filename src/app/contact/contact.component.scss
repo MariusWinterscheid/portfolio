@@ -1,0 +1,47 @@
+@use '../shared/models/styleVariables.scss' as *;
+
+.contact-main {
+    padding: 0 $paddingMainSite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+
+    color: $colorBackground;
+
+    overflow: hidden;
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 28px;
+
+    input,
+    textarea {
+        width: 100%;
+        height: 40px;
+
+        text-decoration: none;
+        background-color: transparent;
+
+        border: none;
+        border-bottom: 2px solid $colorBackground;
+    }
+
+    textarea{
+        height: 200px;
+    }
+}

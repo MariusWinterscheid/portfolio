@@ -1,7 +1,7 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .portfolio-main{
-    width: 100%;
+    margin: 0 $paddingMainSite;
 
     display: flex;
     align-self: center;
@@ -48,6 +48,7 @@
     img{
         width: 100%;
         height: auto;
+        filter: grayscale(100%);
     }
 }
 

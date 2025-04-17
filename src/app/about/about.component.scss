@@ -1,4 +1,4 @@
-@use '../shared/models/components.scss' as *;
+@use '../shared/models/styleVariables.scss' as *;
 
 .about-main{
     display: flex;
@@ -6,6 +6,8 @@
     justify-content: center;
     flex-direction: column;
     gap: 32px;
+
+    margin: 0 $paddingMainSite;
 }
 
 .description{

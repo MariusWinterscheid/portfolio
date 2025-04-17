@@ -12,13 +12,14 @@
 
 body {
     margin: 0;
-    padding: 0 $paddingMainSite;
 
     scroll-behavior: smooth;
 
     font-family: "Syne", sans-serif;
 
     background-color: $colorBackground;
+
+    position: relative;
 }
 
 h1,
