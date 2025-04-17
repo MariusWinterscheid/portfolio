@@ -12,11 +12,6 @@ import { TextService } from '../../shared/services/text.service';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
-
-  @Input() currentLang: 'en' | 'de' = 'en';
-
   txtService = inject(TextService);
-  txtNav = this.txtService.txtNav;
-
   settingsService = inject(SettingsService);
 }

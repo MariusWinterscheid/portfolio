@@ -45,7 +45,7 @@ export class TextService {
       en: 'About Me',
       de: 'Über Mich'
     },
-    'text':{
+    'text': {
       en: 'I am a passionate Frontend Developer with a strong focus on creating user-friendly and visually appealing web applications. I have a solid understanding of HTML, CSS, and JavaScript, and I am always eager to learn new technologies and improve my skills.',
       de: 'Ich bin ein leidenschaftlicher Frontend-Entwickler mit einem starken Fokus auf die Erstellung benutzerfreundlicher und visuell ansprechender Webanwendungen. Ich habe ein solides Verständnis von HTML, CSS und JavaScript und bin immer bestrebt, neue Technologien zu lernen und meine Fähigkeiten zu verbessern.'
     },
@@ -60,6 +60,25 @@ export class TextService {
     'btnTxt': {
       en: "Let's Talk",
       de: 'Kontakt'
+    }
+  }
+
+  txtSkills = {
+    'title': {
+      en: 'My Skills',
+      de: 'Meine Skills'
+    },
+    'text1': {
+      en: "Don't see the skill you need?",
+      de: 'Sie sehen die benötigte Fähigkeit nicht?'
+    },
+    'text2': {
+      en: 'Contact me',
+      de: 'Kontaktieren Sie mich'
+    },
+    'text3': {
+      en: "I'm always ready to learn",
+      de: 'Ich bin immer bereit zu lernen'
     }
   }
 }

@@ -6,4 +6,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    img{
+        width: 240px;
+        height: auto;
+    }
+}
+
+.next-main-odd{
+    justify-content: flex-start;
 }

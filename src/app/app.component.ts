@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from "./about/about.component";
 import { NextComponent } from './next/next.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { NextComponent } from './next/next.component';
     HeroComponent,
     AboutComponent,
     AboutComponent,
-    NextComponent
+    NextComponent,
+    SkillsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
