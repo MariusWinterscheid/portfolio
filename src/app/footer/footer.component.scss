@@ -1,0 +1,31 @@
+@use '../shared/models/styleVariables.scss' as *;
+
+.footer-main {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.icons {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        height: 30px;
+        width: auto;
+    }
+}
