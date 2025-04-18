@@ -10,6 +10,11 @@
     src: url("assets/fonts/overpass/Overpass-VariableFont_wght.ttf") format("trueType");
 }
 
+@font-face {
+    font-family: "Montserrat";
+    src: url("assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf") format("trueType");
+}
+
 body {
     margin: 0;
 
@@ -60,4 +65,22 @@ h4 {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+button{
+    border: 4px solid $colorInactive;
+    padding: 20px 40px;
+    opacity: 50%;
+    background-color: transparent;
+    color: $colorInactive;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.btn-active{
+    opacity: 100%;
+    border-color: $colorBackground;
+    color: $colorBackground;
 }
