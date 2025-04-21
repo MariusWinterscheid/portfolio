@@ -5,31 +5,47 @@
         <p class="form-header">{{ this.txtService.txtContact.disclaimer[settingsService.currentLang] }}</p>
         <span>{{ this.txtService.txtContact.text[settingsService.currentLang] }}</span>
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-            <div class="form-group"> 
+            <div class="form-group">
                 <input type="text" id="name" formControlName="name" name="name" required>
-                <label for="name" class="placeholder">Your name</label>
-                <label *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" for="name" class="fieldErrorMsg">Your name is required</label>
-                <img *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
-                <img *ngIf="contactForm.get('name')?.valid && contactForm.get('name')?.touched" class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+                <label for="name" class="placeholder">{{
+                    this.txtService.txtContact.inputName[settingsService.currentLang] }}</label>
+                <label *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" for="name"
+                    class="fieldErrorMsg">{{ this.txtService.txtContact.errName[settingsService.currentLang] }}</label>
+                <img *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="fieldImg"
+                    src="../../assets/img/icons/form/error.png" alt="feedback">
+                <img *ngIf="contactForm.get('name')?.valid && contactForm.get('name')?.touched" class="fieldImg"
+                    src="../../assets/img/icons/form/correct.png" alt="feedback">
             </div>
             <div class="form-group">
                 <input type="email" id="email" formControlName="email" name="email" required>
-                <label for="email" class="placeholder">Your email</label>
-                <label *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" for="name" class="fieldErrorMsg">Your email is required</label>
-                <img *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
-                <img *ngIf="contactForm.get('email')?.valid && contactForm.get('email')?.touched" class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+                <label for="email" class="placeholder">{{
+                    this.txtService.txtContact.inputMail[settingsService.currentLang] }}</label>
+                <label *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" for="name"
+                    class="fieldErrorMsg">{{ this.txtService.txtContact.errMail[settingsService.currentLang] }}</label>
+                <img *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="fieldImg"
+                    src="../../assets/img/icons/form/error.png" alt="feedback">
+                <img *ngIf="contactForm.get('email')?.valid && contactForm.get('email')?.touched" class="fieldImg"
+                    src="../../assets/img/icons/form/correct.png" alt="feedback">
             </div>
             <div class="form-group">
                 <textarea id="message" name="message" formControlName="message" rows="5" required></textarea>
-                <label for="message" class="placeholder txtAreaPlace">Your message</label>
-                <label *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" for="name" class="fieldErrorMsg">Your message is empty</label>
-                <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
-                <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched" class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+                <label for="message" class="placeholder txtAreaPlace">{{
+                    this.txtService.txtContact.inputMsg[settingsService.currentLang] }}</label>
+                <label *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" for="name"
+                    class="fieldErrorMsg">{{ this.txtService.txtContact.errMsg[settingsService.currentLang] }}</label>
+                <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="fieldImg"
+                    src="../../assets/img/icons/form/error.png" alt="feedback">
+                <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched" class="fieldImg"
+                    src="../../assets/img/icons/form/correct.png" alt="feedback">
             </div>
             <div class="form-group checkbox">
                 <input type="checkbox" id="policy" name="policy" formControlName="policy" required checked>
-                <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</span>
-                <label *ngIf="contactForm.get('policy')?.invalid && contactForm.get('policy')?.touched" for="policy" class="fieldErrorMsg">Please accept the privacy policy.</label>
+                <span>{{ this.txtService.txtContact.policy1[settingsService.currentLang] }}<a href="#">{{
+                        this.txtService.txtContact.policy2[settingsService.currentLang] }}</a>{{
+                    this.txtService.txtContact.policy3[settingsService.currentLang] }}</span>
+                <label *ngIf="contactForm.get('policy')?.invalid && contactForm.get('policy')?.touched" for="policy"
+                    class="fieldErrorMsg">{{ this.txtService.txtContact.errPolicy[settingsService.currentLang]
+                    }}</label>
             </div>
             <button [ngClass]="{ 'btn-active': contactForm.valid}" type="submit">Send message</button>
         </form>

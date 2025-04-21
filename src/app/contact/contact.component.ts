@@ -34,8 +34,9 @@ export class ContactComponent {
   onSubmit() {
     if (this.contactForm.valid) {
       console.log('Formular abgesendet:', this.contactForm.value);
+      this.contactForm.reset();
     } else {
-      this.contactForm.markAllAsTouched(); // zeigt sofort alle Fehler an
+      this.contactForm.markAllAsTouched();
     }
   }
 }

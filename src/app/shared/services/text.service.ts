@@ -116,6 +116,46 @@ export class TextService {
     'text':{
       en: "Say hello! Let's discuss your ideas and make it happen.",
       de: 'Kontaktieren Sie mich! Gerne spreche ich mit Ihnen über Ihre Ideen.'
+    },
+    'inputName':{
+      en: 'Your name',
+      de: 'Ihr Name'
+    },
+    'errName':{
+      en: 'Your name is required',
+      de: 'Ihr Name muss angegeben werden'
+    },
+    'inputMail':{
+      en: 'Your email',
+      de: 'Ihre E-Mail'
+    },
+    'errMail':{
+      en: 'Your email is required',
+      de: 'Ihre E-Mail muss angegeben werden'
+    },
+    'inputMsg':{
+      en: 'Your message',
+      de: 'Ihre Nachricht'
+    },
+    'errMsg':{
+      en: 'Your message is empty',
+      de: 'Bitte geben Sie eine Nachricht ein'
+    },
+    'policy1':{
+      en: "I've read the ",
+      de: "Ich habe die "
+    },
+    'policy2':{
+      en: 'privacy policy ',
+      de: 'Datenschutzrichtlinie '
+    },
+    'policy3':{
+      en: 'and agree to the processing of my data as outlined.',
+      de: 'gelesen, und stimme der Verarbeitung meiner Daten wie beschrieben zu.'
+    },
+    'errPolicy':{
+      en: 'Please accept the privacy policy.',
+      de: 'Bitte die Datenschutzbestimmung akzeptieren'
     }
   }
 }
