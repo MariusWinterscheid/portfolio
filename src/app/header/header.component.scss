@@ -3,19 +3,27 @@
 .header-main {
     padding: 25px 0;
 
-    z-index: 1000;
     position: fixed;
-    left: $paddingMainSite;
-    right: $paddingMainSite;
     top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+    overflow: hidden;
+
+    background-color: $colorBackground;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-box{
+    width: 1080px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    overflow: hidden;
-
-    background-color: $colorBackground;
 }
 
 .logo-img{

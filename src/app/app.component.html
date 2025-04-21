@@ -1,13 +1,15 @@
-<app-header></app-header>
-<app-hero></app-hero>
-<app-about></app-about>
-<app-next [isOdd]="false"></app-next>
-<app-skills></app-skills>
-<app-next [isOdd]="true"></app-next>
-<app-portfolio></app-portfolio>
-<app-next [isOdd]="false"></app-next>
-<app-references></app-references>
-<app-next [isOdd]="true"></app-next>
-<app-contact></app-contact>
+<div class="apps-main">
+    <app-header></app-header>
+    <app-hero></app-hero>
+    <app-about></app-about>
+    <app-next [isOdd]="false"></app-next>
+    <app-skills></app-skills>
+    <app-next [isOdd]="true"></app-next>
+    <app-portfolio></app-portfolio>
+    <app-next [isOdd]="false"></app-next>
+    <app-references></app-references>
+    <app-next [isOdd]="true"></app-next>
+    <app-contact></app-contact>
+</div>
 
-<router-outlet />
+<router-outlet></router-outlet>

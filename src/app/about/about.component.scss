@@ -1,22 +1,36 @@
 @use '../shared/models/styleVariables.scss' as *;
 
-.about-main{
+.about-main {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 32px;
 
-    margin: 0 $paddingMainSite;
-}
-
-.description{
     font-family: 'Overpass', sans-serif;
     font-weight: 400;
     font-size: 20px;
+
+    .about-top {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .about-bottom {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 32px;
+    }
 }
 
-.summary{
+.summary {
     width: 100%;
 
     display: flex;
@@ -29,21 +43,22 @@
     font-weight: 400;
     font-size: 20px;
 
-    .sum-item{   
+    .sum-item {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
 
-        img{
+        img {
             width: 30px;
             height: auto;
         }
     }
 }
 
-.profile-pic{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+@media (min-width:720px) {
+    .about-main {
+        flex-direction: row;
+        font-size: 22px !important;
+    }
 }

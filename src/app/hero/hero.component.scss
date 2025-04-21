@@ -1,9 +1,8 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .hero-main {
+    width: 100%;
     height: 100dvh;
-
-    margin: 0 $paddingMainSite;
 
     display: flex;
     align-items: center;
@@ -102,7 +101,7 @@
         right: 0;
         left: 0;
         
-        animation: arrowAnimation 3.2s linear infinite;
+        animation: arrowAnimation 2.4s linear infinite;
 
         img{
             width: 50px;
@@ -118,5 +117,14 @@
 
     100% {
         transform: translateY(200%);
+    }
+}
+
+@media (min-width:720px) {
+    .developer-txt{
+        font-size: 48px!important;
+    }
+    .hero-bottom {
+        font-size: 22px!important;
     }
 }

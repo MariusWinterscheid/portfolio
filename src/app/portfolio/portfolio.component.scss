@@ -1,20 +1,20 @@
 @use '../shared/models/styleVariables.scss' as *;
 
-.portfolio-main{
-    margin: 0 $paddingMainSite;
-
+.portfolio-main {
     display: flex;
     align-self: center;
     justify-content: center;
     flex-direction: column;
-    p{
+
+    p {
         font-family: 'Overpass', sans-serif;
         font-weight: 400;
         font-size: 20px;
     }
 }
 
-.projects-box{
+.projects-box {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,8 @@
     gap: 48px;
 }
 
-.project{
+.project {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,33 +32,60 @@
     gap: 16px;
 }
 
-.project-img{
+.project-img {
+    width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     gap: 16px;
 
-    p{
+    p {
         margin: 0;
         font-family: 'Syne', sans-serif;
         font-weight: 700;
         font-size: 23px;
     }
 
-    img{
+    .portfolio-img {
+        filter: grayscale(100%);
+        display: flex;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+
+        &:hover .arrow-circle {
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            opacity: 1;
+        }
+
+        .arrow-circle {
+            position: absolute;
+            top: 50%;
+            right: -6%;
+            transform: translate(-50%, -50%) rotate(90deg) scale(0.8);
+            transition: all 0.125s ease-in-out;
+            opacity: 0;
+            z-index: 1;
+
+            width: 40px;
+            height: auto;
+        }
+    }
+
+    img {
         width: 100%;
         height: auto;
-        filter: grayscale(100%);
     }
 }
 
-.project-img-odd{
+.project-img-odd {
     align-items: flex-end;
     text-align: right;
 }
 
-.project-txt-box{
+.project-txt-box {
     width: 100%;
 
     display: flex;
@@ -67,21 +95,55 @@
 
     gap: 15px;
 
-    .project-skillset{
+    .project-skillset {
         font-family: 'Overpass', sans-serif;
         font-weight: 400;
         font-size: 20px;
         color: $colorHighlight;
     }
 
-    .project-txt{
+    .project-txt {
         font-family: 'Overpass', sans-serif;
         font-weight: 400;
         font-size: 16px;
     }
 }
 
-.project-txt-box-odd{
+.project-txt-box-odd {
     align-items: flex-end;
     text-align: right;
+}
+
+@media (min-width:720px) {
+    p {
+        font-size: 22px !important;
+    }
+
+    .project {
+        flex-direction: row;
+        gap: 80px;
+        position: relative;
+    }
+
+    .project-img {
+        flex: 1;
+    }
+
+    .project-odd {
+        flex-direction: row-reverse;
+    }
+
+    .project-skillset {
+        font-size: 23px;
+    }
+
+    .arrow-circle {
+        width: 75px !important;
+        right: -18% !important;
+    }
+
+    .project-txt-box {
+        flex: 1;
+        position: absolute;
+    }
 }

@@ -1,10 +1,16 @@
 <div class="about-main">
-    <h2>{{ this.txtService.txtAbout.title[settingsService.currentLang] }}</h2>
-    <div class="description">{{ this.txtService.txtAbout.text[settingsService.currentLang] }}</div>
-    <div class="summary">
-        <div class="sum-item"><img src="assets/img/icons/house.png" alt="house">{{ this.txtService.txtAbout.basedIn[settingsService.currentLang] }}</div>
-        <div class="sum-item"><img src="assets/img/icons/laptop.png" alt="laptop">{{ this.txtService.txtAbout.wayOfWorking[settingsService.currentLang] }}</div>
+    <div class="about-top">
+        <h2>{{ this.txtService.txtAbout.title[settingsService.currentLang] }}</h2>
+        <div>{{ this.txtService.txtAbout.text[settingsService.currentLang] }}</div>
+        <div class="summary">
+            <div class="sum-item"><img src="assets/img/icons/house.png" alt="house">{{
+                this.txtService.txtAbout.basedIn[settingsService.currentLang] }}</div>
+            <div class="sum-item"><img src="assets/img/icons/laptop.png" alt="laptop">{{
+                this.txtService.txtAbout.wayOfWorking[settingsService.currentLang] }}</div>
+        </div>
+        <button>{{ this.txtService.txtAbout.btnTxt[settingsService.currentLang] }}</button>
     </div>
-    <div class="btn">{{ this.txtService.txtAbout.btnTxt[settingsService.currentLang] }}</div>
-    <img class="profile-pic" src="../../assets/img/profile.jpg" alt="profile">
+    <div class="about-bottom image-container">
+        <img src="../../assets/img/profile.jpg" alt="profile">
+    </div>
 </div>
