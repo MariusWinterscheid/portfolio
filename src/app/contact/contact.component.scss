@@ -10,12 +10,11 @@
     gap: 40px;
 
     color: $colorBackground;
-
     position: relative;
     overflow: hidden;
 }
 
-.title{
+.title {
     width: 100%;
 
     font-family: 'Syne', sans-serif;
@@ -23,7 +22,7 @@
     font-size: 45px;
 }
 
-.bg{
+.bg {
     width: 200%;
     height: 200%;
 
@@ -35,7 +34,7 @@
 
     transform: rotate(4deg);
     transform-origin: top left;
-    
+
 }
 
 .form-main {
@@ -217,7 +216,7 @@
     }
 }
 
-.footer{
+.footer {
     width: 100%;
     padding: $paddingMainSite 0;
 }

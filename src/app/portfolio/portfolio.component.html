@@ -9,7 +9,7 @@
                 <div class="project-img" [ngClass]="{'project-img-odd': $index % 2 === 1 }">
                     <div class="image-container portfolio-img">
                         <img [src]="'../../assets/img/projects/' + project.img" alt="{{project.img}}">
-                        <div class="arrow-circle">
+                        <div class="arrow-circle" [ngClass]="{'arrow-circle-odd': $index % 2 === 1 }">
                             <img src="../../assets/img/icons/circleArrow.png" alt="circle arrow">
                         </div>
                     </div>
