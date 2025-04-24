@@ -3,22 +3,27 @@
     <p>{{ this.txtService.txtPortfolio.disclaimer[settingsService.currentLang] }}</p>
     <div class="projects-box">
         @for (project of projects; track $index) {
-        <div class="project" [ngClass]="{'project-odd': $index % 2 === 1 }">
-            <div class="project-img" [ngClass]="{'project-img-odd': $index % 2 === 1 }">
-                <p>{{ $index + 1 }} / {{ projects.length }}</p>
-                <div class="image-container portfolio-img">
-                    <img class="arrow-circle" src="../../assets/img/icons/circleArrow.png" alt="circle arrow">
-                    <img [src]="'../../assets/img/projects/' + project.img" alt="{{project.img}}">
+        <div class="project-main">
+            <p [ngClass]="{'p-odd': $index % 2 === 1 }">{{ $index + 1 }} / {{ projects.length }}</p>
+            <div class="project" [ngClass]="{'project-odd': $index % 2 === 1 }">
+                <div class="project-img" [ngClass]="{'project-img-odd': $index % 2 === 1 }">
+                    <div class="image-container portfolio-img">
+                        <img [src]="'../../assets/img/projects/' + project.img" alt="{{project.img}}">
+                        <div class="arrow-circle">
+                            <img src="../../assets/img/icons/circleArrow.png" alt="circle arrow">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="project-txt-box" [ngClass]="{'project-txt-box-odd': $index % 2 === 1 }">
-                <div class="project-header">
-                    <h3>{{ project.title }}</h3>
+                <div class="project-txt-box" [ngClass]="{'project-txt-box-odd': $index % 2 === 1 }">
+                    <div class="project-header">
+                        <h3>{{ project.title }}</h3>
+                    </div>
+                    <div class="project-skillset">{{ project.skillset }}</div>
+                    <div class="project-txt">{{ project.description[settingsService.currentLang] }}</div>
                 </div>
-                <div class="project-skillset">{{ project.skillset }}</div>
-                <div class="project-txt">{{ project.description[settingsService.currentLang] }}</div>
             </div>
         </div>
+
         }
     </div>
 </div>
