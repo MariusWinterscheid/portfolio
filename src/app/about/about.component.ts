@@ -23,10 +23,17 @@ export class AboutComponent implements OnInit, OnDestroy {
       this.currentLang = lang;
     });
   }
-  
+
   ngOnDestroy(): void {
     if (this.sub) {
       this.sub.unsubscribe();
+    }
+  }
+
+  scrollToId(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   }
 }

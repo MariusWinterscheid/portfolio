@@ -34,7 +34,15 @@ export class NavComponent implements OnInit, OnDestroy {
     }
   }
 
-  clickNavItem(){
+  clickNavItem(id: string){
     this.statesService.closeNav();
+    this.scrollToId(id);
+  }
+
+  scrollToId(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

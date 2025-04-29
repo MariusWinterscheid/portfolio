@@ -11,17 +11,20 @@ export class TextService {
     {
       title: 'nav1',
       en: 'About Me',
-      de: 'Über Mich'
+      de: 'Über Mich',
+      id: 'about'
     },
     {
       title: 'nav2',
       en: 'My Skills',
-      de: 'Meine Fähigkeiten'
+      de: 'Meine Fähigkeiten',
+      id: 'skills'
     },
     {
       title: 'nav3',
       en: 'Portfolio',
-      de: 'Portfolio'
+      de: 'Portfolio',
+      id: 'portfolio'
     }
   ]
 

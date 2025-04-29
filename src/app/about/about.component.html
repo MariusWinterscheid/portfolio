@@ -8,7 +8,7 @@
             <div class="sum-item"><img src="assets/img/icons/laptop.png" alt="laptop">{{
                 this.txtService.txtAbout.wayOfWorking[currentLang] }}</div>
         </div>
-        <button>{{ this.txtService.txtAbout.btnTxt[currentLang] }}</button>
+        <button (click)="scrollToId('contact')">{{ this.txtService.txtAbout.btnTxt[currentLang] }}</button>
     </div>
     <div class="about-bottom image-container">
         <img src="../../assets/img/profile.jpg" alt="profile">

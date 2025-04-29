@@ -2,7 +2,7 @@
     <div class="header-box">
         <img class="logo-img" src="assets\img\icons\logo.png" alt="logo">
         <div class="lan-switcher-animation">
-            <div id="lanSwitcherMain" [ngStyle]="{ top: (statesService.isNavOpen$ | async) ? '0' : '-100dvh' }"
+            <div id="lanSwitcherMain" [ngStyle]="{ top: (isNavOpen) ? '0' : '-100dvh' }"
                 class="lan-switcher-main">
                 <div id="lenSwitcherEn" [class.lan-active]="currentLang==='en'" class="lan-switcher"
                     (click)="onClickLangSwitcher()">EN</div>
