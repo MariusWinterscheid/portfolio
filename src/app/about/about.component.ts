@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { TextService } from '../shared/services/text.service';
-import { SettingsService } from '../shared/services/settings.service';
+import { GlobalStatesService } from '../shared/services/global-states.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,23 @@ import { SettingsService } from '../shared/services/settings.service';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit, OnDestroy {
   txtService = inject(TextService);
-  settingsService = inject(SettingsService);
+  
+  currentLang: 'en' | 'de' = 'en';
+  private sub: Subscription | null = null;
+
+  constructor(private statesService: GlobalStatesService) { }
+
+  ngOnInit(): void {
+    this.sub = this.statesService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
+  
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 }

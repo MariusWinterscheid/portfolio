@@ -1,6 +1,6 @@
 <div class="portfolio-main">
-    <h2>{{ this.txtService.txtPortfolio.title[settingsService.currentLang] }}</h2>
-    <p>{{ this.txtService.txtPortfolio.disclaimer[settingsService.currentLang] }}</p>
+    <h2>{{ this.txtService.txtPortfolio.title[currentLang] }}</h2>
+    <p>{{ this.txtService.txtPortfolio.disclaimer[currentLang] }}</p>
     <div class="projects-box">
         @for (project of projects; track $index) {
         <div class="project-main">
@@ -19,7 +19,7 @@
                         <h3>{{ project.title }}</h3>
                     </div>
                     <div class="project-skillset">{{ project.skillset }}</div>
-                    <div class="project-txt">{{ project.description[settingsService.currentLang] }}</div>
+                    <div class="project-txt">{{ project.description[currentLang] }}</div>
                 </div>
             </div>
         </div>

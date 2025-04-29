@@ -1,7 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { CommonModule } from '@angular/common';
-import { SettingsService } from '../shared/services/settings.service';
+import { GlobalStatesService } from '../shared/services/global-states.service';
+import { Subscription } from 'rxjs';
+
+
 
 const IMAGES_BURGER_MENU_OPEN = [
   'assets/img/icons/burgerMenuTransition/open/burgerMenuOpen1.png',
@@ -23,17 +26,39 @@ const IMAGES_BURGER_MENU_CLOSE = [
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-  settingsService = inject(SettingsService);
+export class HeaderComponent implements OnInit, OnDestroy {
+  currentLang: 'en' | 'de' = 'en';
+  isNavOpen = false;
+  private sub: Subscription | null = null;
 
-  constructor() { }
+  statesService = inject(GlobalStatesService);
+
+  constructor(private globalState: GlobalStatesService) { }
+
+  ngOnInit(): void {
+    this.sub = this.globalState.isNavOpen$.subscribe((isNavOpen) => {
+      this.isNavOpen = isNavOpen;
+      console.log('isNavOpen', isNavOpen);
+    });
+    this.sub = this.globalState.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 
   onClickBurgerMenu() {
     this.animateBurgerMenu();
+    this.statesService.toggleNav();
   }
 
-  onClickLenSwitcher() {
-    this.settingsService.currentLang = this.settingsService.currentLang === 'en' ? 'de' : 'en';
+  onClickLangSwitcher() {
+    this.statesService.switchLang();
+    this.animateBurgerMenu();
+    this.statesService.toggleNav();
   }
 
   animateBurgerMenu() {
@@ -42,12 +67,10 @@ export class HeaderComponent {
 
     if (!burgerMenu) return;
     this.playAnimationBurgerMenu(path, burgerMenu);
-
-    this.settingsService.isNavOpen = !this.settingsService.isNavOpen;
   }
 
   playAnimationBurgerMenu(path: string, burgerMenu: HTMLImageElement) {
-    const choosenArray = this.settingsService.isNavOpen ? IMAGES_BURGER_MENU_CLOSE : IMAGES_BURGER_MENU_OPEN;
+    const choosenArray = this.isNavOpen ? IMAGES_BURGER_MENU_CLOSE : IMAGES_BURGER_MENU_OPEN;
     for (let i = 0; i < choosenArray.length; i++) {
       setTimeout(() => {
         path = choosenArray[i];

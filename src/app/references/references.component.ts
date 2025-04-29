@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { SettingsService } from '../shared/services/settings.service';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { TextService } from '../shared/services/text.service';
+import { GlobalStatesService } from '../shared/services/global-states.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-references',
@@ -9,9 +10,24 @@ import { TextService } from '../shared/services/text.service';
   templateUrl: './references.component.html',
   styleUrl: './references.component.scss'
 })
-export class ReferencesComponent {
+export class ReferencesComponent implements OnInit, OnDestroy {
+  currentLang: 'en' | 'de' = 'en';
+  private sub: Subscription | null = null;
+
   txtService = inject(TextService);
-  settingsService = inject(SettingsService);
+  
+  constructor(private statesService: GlobalStatesService) {}
+
+  ngOnInit(): void {
+    this.sub = this.statesService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 
   references = [
     {

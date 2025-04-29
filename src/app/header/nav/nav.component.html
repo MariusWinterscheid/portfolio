@@ -1,8 +1,8 @@
-<div class="nav-main" [ngClass]="{ 'is-open': settingsService.isNavOpen }">
+<div class="nav-main" [ngClass]="{ 'is-open': (isnavOpen) }">
     <div class="nav-items">
         @for (item of this.txtService.txtNav; track item.title) {
             <div class="nav-item">
-                <h4>{{ item[settingsService.currentLang] }}</h4>
+                <h4 (click)="clickNavItem()">{{ item[currentLang] }}</h4>
             </div>
         }
     </div>

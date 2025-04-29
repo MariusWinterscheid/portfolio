@@ -1,7 +1,7 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .contact-main {
-    padding-top: 80px;
+    padding-top: 80px;    
 
     display: flex;
     align-items: center;
@@ -219,4 +219,11 @@
 .footer {
     width: 100%;
     padding: $paddingMainSite 0;
+}
+
+@media(min-width: 720px){
+    .contact-main{
+        padding: 0 $paddingMainSite;
+        padding-top: 80px;
+    }
 }

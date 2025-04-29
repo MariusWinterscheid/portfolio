@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { TextService } from '../shared/services/text.service';
-import { SettingsService } from '../shared/services/settings.service';
 import { CommonModule } from '@angular/common';
+import { GlobalStatesService } from '../shared/services/global-states.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-skills',
@@ -11,8 +12,23 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  currentLang: 'en' | 'de' = 'en';
+  private sub: Subscription | null = null;
+
   txtService = inject(TextService);
-  settingsService = inject(SettingsService);
+  
+  constructor(private statesService: GlobalStatesService){}
+
+  ngOnInit(): void {
+    this.sub = this.statesService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 
   skills = [
     {

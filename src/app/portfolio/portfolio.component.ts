@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { TextService } from '../shared/services/text.service';
-import { SettingsService } from '../shared/services/settings.service';
 import { CommonModule } from '@angular/common';
+import { GlobalStatesService } from '../shared/services/global-states.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,9 +11,23 @@ import { CommonModule } from '@angular/common';
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit, OnDestroy {
+  currentLang: 'en' | 'de' = 'en';
+  sub: Subscription | null = null;
+
   txtService = inject(TextService);
-  settingsService = inject(SettingsService);
+ 
+  constructor(private statesService: GlobalStatesService) { }
+  ngOnInit(): void {
+    this.sub = this.statesService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 
   projects = [
     {
