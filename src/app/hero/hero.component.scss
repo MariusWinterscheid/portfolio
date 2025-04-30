@@ -1,13 +1,14 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .hero-main {
-    width: 100%;
     height: 100dvh;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    padding: 0 $paddingMainSite;
 
     .hero-top {
         flex: 3;
@@ -121,6 +122,11 @@
 }
 
 @media (min-width:720px) {
+    .hero-main {
+        padding: 0;
+        width: 100%;
+    }
+
     .developer-txt{
         font-size: 48px!important;
     }

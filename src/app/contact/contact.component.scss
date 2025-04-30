@@ -1,6 +1,7 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .contact-main {
+    padding: 0 $paddingMainSite;
     padding-top: 80px;    
 
     display: flex;
@@ -223,7 +224,6 @@
 
 @media(min-width: 720px){
     .contact-main{
-        padding: 0 $paddingMainSite;
         padding-top: 80px;
     }
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalStatesService } from '../shared/services/global-states.service';
 import { CommonModule } from '@angular/common';
+import { TextService } from '../shared/services/text.service';
 
 
 @Component({
@@ -12,15 +13,27 @@ import { CommonModule } from '@angular/common';
   styleUrl: './legal.component.scss'
 })
 export class LegalComponent implements OnInit, OnDestroy {
+  txtService = inject(TextService);
+
   isLegalOpen = false;
   private sub: Subscription | null = null;
+
+  currentLang: 'en' | 'de' = 'en';
 
   constructor(private statesService: GlobalStatesService) { }
 
   ngOnInit(): void {
-    this.sub = this.statesService.isLegalOpen$.subscribe((isLegalOpen) => {
+    const subIsLegalOpen = this.statesService.isLegalOpen$.subscribe((isLegalOpen) => {
       this.isLegalOpen = isLegalOpen;
     });
+
+    const subLang = this.statesService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+
+    this.sub = new Subscription();
+    this.sub.add(subIsLegalOpen);
+    this.sub.add(subLang);
   }
   ngOnDestroy(): void {
     if (this.sub) {

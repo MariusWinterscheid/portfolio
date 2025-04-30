@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalStatesService } from '../shared/services/global-states.service';
+import { TextService } from '../shared/services/text.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,15 +11,29 @@ import { GlobalStatesService } from '../shared/services/global-states.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit, OnDestroy {
+  txtService = inject(TextService);
+
   isLegalOpen = false;
   private sub: Subscription | null = null;
 
-  constructor(private statesService: GlobalStatesService) { }
+  currentLang: 'en' | 'de' = 'en';
+
+  constructor(private globalState: GlobalStatesService) { }
 
   ngOnInit(): void {
-    this.sub = this.statesService.isLegalOpen$.subscribe((isLegalOpen) => {
+    const legalSub = this.globalState.isLegalOpen$.subscribe((isLegalOpen) => {
       this.isLegalOpen = isLegalOpen;
     });
+
+    const langSub = this.globalState.currentLang$
+      .subscribe((lang) => {
+        this.currentLang = lang;
+      });
+
+    this.sub = new Subscription();
+    this.sub.add(legalSub);
+    this.sub.add(langSub);
+
   }
   ngOnDestroy(): void {
     if (this.sub) {
@@ -26,7 +41,11 @@ export class FooterComponent implements OnInit, OnDestroy {
     }
   }
 
-  openLegal(){
-    this.statesService.toggleLegal();
+  openLegal() {
+    this.globalState.toggleLegal();
+  }
+
+  openInNewWindow(url: string): void {
+    window.open(url, '_blank');
   }
 }

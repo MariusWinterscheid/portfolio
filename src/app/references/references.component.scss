@@ -1,13 +1,13 @@
 @use '../shared/models/styleVariables.scss' as *;
 
 .references-main {
-    width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 24px;
+
+    padding: 0 $paddingMainSite;
 
     .ref-disclaimer{
         font-family: 'Overpass', sans-serif;
@@ -81,6 +81,11 @@
 }
 
 @media(min-width: 720px){
+    .references-main {
+        width: 100%;
+        padding: 0;
+    }
+
     .ref-box{
         flex-direction: row;
     }

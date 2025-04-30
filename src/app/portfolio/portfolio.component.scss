@@ -6,6 +6,8 @@
     justify-content: center;
     flex-direction: column;
 
+    padding: 0 $paddingMainSite;
+
     p {
         font-family: 'Overpass', sans-serif;
         font-weight: 400;
@@ -159,6 +161,10 @@
 }
 
 @media (min-width:720px) {
+    .portfolio-main {
+        padding: 0;
+    }
+
     p {
         font-size: 22px !important;
     }

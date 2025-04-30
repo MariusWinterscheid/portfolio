@@ -24,8 +24,58 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     img {
         height: 30px;
         width: auto;
+    }
+}
+
+.footer-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.legal-note {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .desktop {
+        display: flex;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .footer-main {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .logo{
+        justify-content: flex-start;
+    }
+
+    .footer-icons-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 28px;
     }
 }
