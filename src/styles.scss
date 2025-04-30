@@ -140,36 +140,35 @@ button {
     opacity: 1;
 }
 
-/* Custom Scrollbar Styling */
+/* Custom Scrollbar Styling (WebKit browsers) */
 ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+    width: 0;  /* Hide the scrollbar by setting width to 0 */
+    height: 0; /* Hide horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent; // statt $colorBackground
+    background-color: transparent; /* Keeps track transparent */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $colorHighlight;
+    background-color: transparent; /* Thumb is transparent, effectively hiding it */
     border-radius: 10px;
-    border: 3px solid transparent; // passt sich dem transparenten Track an
+    border: 3px solid transparent; /* Keeps border invisible */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: $colorHighlight;
+    background-color: transparent; /* Keep thumb hidden on hover */
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: transparent; // statt $colorBackground
+    background-color: transparent; /* Transparent corner */
 }
 
 /* Firefox scrollbar (limited support) */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: $colorHighlight transparent; // statt $colorBackground
+    scrollbar-width: none; /* Hide the scrollbar */
+    scrollbar-color: transparent transparent; /* Transparent thumb and track */
 }
-
 
 
 @media (min-width:720px) {
