@@ -1,4 +1,4 @@
-@import './app/shared/models/styleVariables.scss';
+@use './app/shared/models/styleVariables.scss' as *;
 
 @font-face {
     font-family: "Syne";
@@ -26,7 +26,9 @@ body {
     justify-content: center;
     flex-direction: column;
 
-    &:hover{
+    overflow-x: hidden;
+
+    &:hover {
         cursor: default;
     }
 }
@@ -138,6 +140,38 @@ button {
     opacity: 1;
 }
 
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; // statt $colorBackground
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $colorHighlight;
+    border-radius: 10px;
+    border: 3px solid transparent; // passt sich dem transparenten Track an
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $colorHighlight;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent; // statt $colorBackground
+}
+
+/* Firefox scrollbar (limited support) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $colorHighlight transparent; // statt $colorBackground
+}
+
+
+
 @media (min-width:720px) {
     h1 {
         font-weight: 800;
@@ -149,6 +183,7 @@ button {
         font-size: 78px;
         text-align: center;
     }
+
     h3 {
         font-size: 45px;
     }

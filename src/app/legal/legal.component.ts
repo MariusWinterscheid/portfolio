@@ -1,15 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalStatesService } from '../shared/services/global-states.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-legal',
   standalone: true,
-  imports: [],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  imports: [CommonModule],
+  templateUrl: './legal.component.html',
+  styleUrl: './legal.component.scss'
 })
-export class FooterComponent implements OnInit, OnDestroy {
+export class LegalComponent implements OnInit, OnDestroy {
   isLegalOpen = false;
   private sub: Subscription | null = null;
 
@@ -26,7 +28,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     }
   }
 
-  openLegal(){
+  onClickLegal() {
     this.statesService.toggleLegal();
   }
 }

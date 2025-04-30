@@ -1,0 +1,35 @@
+@use '../shared/models/styleVariables.scss' as *;
+
+.legal-main{
+    width: 100dvw;
+    height: 100dvh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba($color: $colorInactive, $alpha: 0.8);
+
+    transition: all 0.5s ease-in-out;
+}
+
+.active{
+    display: flex;
+}
+
+.notice-container{
+    height: 80%;
+
+    max-width: $maxWidthMain;
+    padding: $paddingMainSite;
+
+    background-color: $colorBackground;
+    
+    overflow: scroll;
+    overflow-x: hidden;
+}

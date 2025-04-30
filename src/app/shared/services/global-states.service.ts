@@ -11,6 +11,9 @@ export class GlobalStatesService {
   private currentLang = new BehaviorSubject<'en' | 'de'>('en');
   currentLang$ = this.currentLang.asObservable();
 
+  private isLegalOpen = new BehaviorSubject<boolean>(false);
+  isLegalOpen$ = this.isLegalOpen.asObservable();
+
   constructor() { }
 
   toggleNav() {
@@ -27,4 +30,8 @@ export class GlobalStatesService {
   setLang(lang: 'en' | 'de') {
     this.currentLang.next(lang);
   } 
+
+  toggleLegal() {
+    this.isLegalOpen.next(!this.isLegalOpen.value);
+  }
 }
