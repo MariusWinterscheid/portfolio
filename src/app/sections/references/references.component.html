@@ -1,0 +1,20 @@
+<section>
+    <div class="references-main">
+        <h2>{{ this.txtService.txtRef.title[currentLang] }}</h2>
+        <div class="ref-disclaimer">{{ this.txtService.txtRef.disclaimer[currentLang] }}</div>
+        <div class="ref-box">
+            @for(ref of references; track $index){
+            <div class="ref">
+                <div class="ref-header">
+                    <img src="assets/img/icons/quote.png" alt="quote">
+                    <p>{{ ref.name }}</p>
+                    <div class="ref-position">{{ ref.position }}</div>
+                </div>
+                <div class="reference">
+                    {{ ref.reference[currentLang] }}
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

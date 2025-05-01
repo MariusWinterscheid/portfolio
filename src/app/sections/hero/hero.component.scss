@@ -1,0 +1,130 @@
+@use '../../shared/models/styleVariables.scss' as *;
+
+section{
+    height: 100dvh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-main {
+    height: 100%;
+    width: 100%;
+    max-width: $maxWidthDesktop;
+    padding: 0 $paddingSide;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    > * {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-top {
+        flex: 3;
+
+        flex-direction: column;
+    }
+
+    .hero-bottom {
+        flex: 1;
+        flex-direction: row;
+    }
+}
+
+.hero-subtitle {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+
+    .subtitle-line {
+        height: 3px;
+        width: 100%;
+        background-color: $colorPrimary;
+    }
+
+    .developer-txt {
+        font-family: 'Overpass', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: $colorHighlight;
+        white-space: nowrap;
+    }
+}
+
+.mail-box {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    .mail-transform {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        transform: rotate(-90deg) translateY(100%);
+        transform-origin: left bottom;
+    }
+}
+
+.call-to-action-box {
+    width: fit-content;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.arrow-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    .arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        
+        animation: arrowAnimation 2.4s linear infinite;
+
+        img{
+            width: 50px;
+            height: auto;
+        }
+    }
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+@media (min-width:720px) {
+    .hero-main {
+        padding: 0 $paddingSideDesktop;
+    }
+}

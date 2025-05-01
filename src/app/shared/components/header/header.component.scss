@@ -1,0 +1,108 @@
+@use '../../../shared/models/styleVariables.scss' as *;
+
+.header-main {
+    width: 100dvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+    overflow: hidden;
+
+    background-color: $colorBackground;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-box{
+    width: 100%;
+    max-width: $maxWidthDesktop;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px $paddingSide;
+}
+
+.logo-img{
+    width: 70px;
+    height: auto;
+}
+
+#burgerMenu {
+    height: 40px;
+    width: 32px;
+
+    object-fit: scale-down;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.lan-switcher-animation {
+    position: relative;
+
+    .lan-switcher-main {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 120%;
+
+        position: absolute;
+
+        top: -100dvh;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        transition: all 0.5s ease-in-out;
+
+        .lan-switcher {
+            width: 40px;
+            height: 28px;
+
+            padding: 0 6px;
+
+            border: 2px solid transparent;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.lan-active {
+    border: 2px solid $colorHighlight!important;
+}
+/* .app-nav-box{
+    height: 100dvh;
+    width: 100dvw;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+} */
+
+@media (min-width: 720px){
+    .header-box{
+        padding: 30px $paddingSideDesktop;
+    }
+}

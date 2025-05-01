@@ -1,0 +1,31 @@
+<section>
+    <div class="portfolio-main">
+        <h2>{{ this.txtService.txtPortfolio.title[currentLang] }}</h2>
+        <p>{{ this.txtService.txtPortfolio.disclaimer[currentLang] }}</p>
+        <div class="projects-box">
+            @for (project of projects; track $index) {
+            <div class="project-main">
+                <p [ngClass]="{'p-odd': $index % 2 === 1 }">{{ $index + 1 }} / {{ projects.length }}</p>
+                <div class="project" [ngClass]="{'project-odd': $index % 2 === 1 }">
+                    <div class="project-img" [ngClass]="{'project-img-odd': $index % 2 === 1 }">
+                        <div class="image-container portfolio-img">
+                            <img [src]="'../../assets/img/projects/' + project.img" alt="{{project.img}}">
+                            <div class="arrow-circle" [ngClass]="{'arrow-circle-odd': $index % 2 === 1 }">
+                                <img src="../../assets/img/icons/circleArrow.png" alt="circle arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-txt-box" [ngClass]="{'project-txt-box-odd': $index % 2 === 1 }">
+                        <div class="project-header">
+                            <h3>{{ project.title }}</h3>
+                        </div>
+                        <div class="project-skillset">{{ project.skillset }}</div>
+                        <div class="project-txt">{{ project.description[currentLang] }}</div>
+                    </div>
+                </div>
+            </div>
+
+            }
+        </div>
+    </div>
+</section>

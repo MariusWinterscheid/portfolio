@@ -15,18 +15,26 @@
     src: url("assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf") format("trueType");
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    scroll-behavior: smooth;
-    font-family: 'Syne', sans-serif;
     background-color: $colorBackground;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    scroll-behavior: smooth;
 
     overflow-x: hidden;
+
+    font-family: 'Overpass', sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    text-align: center;
+
+    position: relative;
 
     &:hover {
         cursor: default;
@@ -40,14 +48,12 @@ h4 {
     margin: 0;
 }
 
-/* main title on hero page */
 h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 45px;
 }
 
-/* main title on components */
 h2 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -60,14 +66,13 @@ h2 {
     }
 }
 
-/* sub title on components */
 h3 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 32px;
 }
 
-/* nav */
+
 h4 {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
@@ -140,43 +145,37 @@ button {
     opacity: 1;
 }
 
-/* Custom Scrollbar Styling (WebKit browsers) */
+
 ::-webkit-scrollbar {
-    width: 0;  /* Hide the scrollbar by setting width to 0 */
-    height: 0; /* Hide horizontal scrollbar */
+    width: 0;
+    height: 0;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent; /* Keeps track transparent */
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: transparent; /* Thumb is transparent, effectively hiding it */
+    background-color: transparent;
     border-radius: 10px;
-    border: 3px solid transparent; /* Keeps border invisible */
+    border: 3px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: transparent; /* Keep thumb hidden on hover */
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: transparent; /* Transparent corner */
+    background-color: transparent;
 }
 
-/* Firefox scrollbar (limited support) */
+
 * {
-    scrollbar-width: none; /* Hide the scrollbar */
-    scrollbar-color: transparent transparent; /* Transparent thumb and track */
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
 }
-
 
 @media (min-width:720px) {
-    h1 {
-        font-weight: 800;
-        font-size: 128px;
-    }
-
     h2 {
         font-weight: 800;
         font-size: 78px;
@@ -185,5 +184,12 @@ button {
 
     h3 {
         font-size: 45px;
+    }
+}
+
+@media (min-width:1060px){
+    h1 {
+        font-weight: 800;
+        font-size: 128px;
     }
 }

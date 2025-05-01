@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class GlobalStatesService {
-  private isNavOpen = new BehaviorSubject<boolean>(false);
+  private isNavOpen = new BehaviorSubject<boolean>(true);
   isNavOpen$ = this.isNavOpen.asObservable();
 
   private currentLang = new BehaviorSubject<'en' | 'de'>('en');
