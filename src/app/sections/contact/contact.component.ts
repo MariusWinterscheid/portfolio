@@ -21,7 +21,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContactComponent {
   txtService = inject(TextService);
   http = inject(HttpClient);
-  mailTest = true;
+  mailTest = false;
 
   contactData = {
     name: '',
@@ -31,7 +31,7 @@ export class ContactComponent {
   }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://marius-winterscheid.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -72,7 +72,6 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (contactForm.submitted && contactForm.form.valid && this.mailTest) {
-      console.log('Form data:', this.contactData);
       contactForm.resetForm();
     }
   }

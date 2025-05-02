@@ -2,6 +2,7 @@
     <div class="portfolio-main">
         <h2>{{ this.txtService.txtPortfolio.title[currentLang] }}</h2>
         <p>{{ this.txtService.txtPortfolio.disclaimer[currentLang] }}</p>
+        <p><strong>{{ this.txtService.txtPortfolio.demoInfo[currentLang] }}</strong></p>
         <div class="projects-box">
             @for (project of projects; track $index) {
             <div class="project-main">

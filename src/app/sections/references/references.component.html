@@ -1,7 +1,7 @@
 <section>
     <div class="references-main">
         <h2>{{ this.txtService.txtRef.title[currentLang] }}</h2>
-        <div class="ref-disclaimer">{{ this.txtService.txtRef.disclaimer[currentLang] }}</div>
+        <div class="ref-disclaimer">{{ this.txtService.txtRef.disclaimer[currentLang] }} <br><br><strong style="color: red;">{{ this.txtService.txtRef.demoInfo[currentLang] }}</strong></div>
         <div class="ref-box">
             @for(ref of references; track $index){
             <div class="ref">

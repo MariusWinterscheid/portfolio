@@ -7,6 +7,9 @@ export class TextService {
 
   constructor() { }
 
+  mailAddressTxt = 'connect@marius-winterscheid.de'
+  mailAddressHtml = 'connect&#64;marius-winterscheid.de'
+
   txtNav = [
     {
       title: 'nav1',
@@ -93,6 +96,10 @@ export class TextService {
     'disclaimer': {
       en: 'Explore a selection of my work here - Interact with my projects to see my sills in action.',
       de: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.'
+    },
+    'demoInfo': {
+      en: 'INFO: Direct GitHub links to the project and corresponding test access will be available soon.',
+      de: 'INFO: Direkte Githublinks zum Projekt, und jeweilige Testzugänge sind bald verfügbar.'
     }
   }
 
@@ -102,8 +109,12 @@ export class TextService {
       de: 'Referenzen'
     },
     'disclaimer': {
-      en: 'Explore a selection of my work here - Interact with my projects to see my skills in action.',
-      de: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.'
+      en: 'Below you will find opinions and feedback from others about me and my work.',
+      de: 'Nachfolgend finden Sie Meinungen und Rückmeldungen anderer über mich und meine Arbeit.'
+    },
+    'demoInfo': {
+      en: 'Current content is fictitious and for demonstration purposes only.',
+      de: 'Der aktuelle Inhalt der Kommentare ist fiktiv und allein zu Demozwecken.'
     }
   }
 
