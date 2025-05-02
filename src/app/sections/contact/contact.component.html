@@ -5,50 +5,62 @@
         <div class="form-main">
             <p class="form-header">{{ this.txtService.txtContact.disclaimer[currentLang] }}</p>
             <span>{{ this.txtService.txtContact.text[currentLang] }}</span>
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
                 <div class="form-group">
-                    <input type="text" id="name" formControlName="name" name="name" required>
+                    <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required>
                     <label for="name" class="placeholder">{{
                         this.txtService.txtContact.inputName[currentLang] }}</label>
-                    <label *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" for="name"
-                        class="fieldErrorMsg">{{ this.txtService.txtContact.errName[currentLang] }}</label>
-                    <img *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="fieldImg"
-                        src="../../assets/img/icons/form/error.png" alt="feedback">
-                    <img *ngIf="contactForm.get('name')?.valid && contactForm.get('name')?.touched" class="fieldImg"
-                        src="../../assets/img/icons/form/correct.png" alt="feedback">
+
+                    @if(!name.valid && name.touched){
+                    <label for="name" class="fieldErrorMsg">{{ this.txtService.txtContact.errName[currentLang]
+                        }}</label>
+                    <img class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
+                    }
+                    @if(name.valid && name.touched){
+                    <img class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+                    }
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" formControlName="email" name="email" required>
+                    <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                        required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     <label for="email" class="placeholder">{{
                         this.txtService.txtContact.inputMail[currentLang] }}</label>
-                    <label *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" for="name"
-                        class="fieldErrorMsg">{{ this.txtService.txtContact.errMail[currentLang] }}</label>
-                    <img *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="fieldImg"
-                        src="../../assets/img/icons/form/error.png" alt="feedback">
-                    <img *ngIf="contactForm.get('email')?.valid && contactForm.get('email')?.touched" class="fieldImg"
-                        src="../../assets/img/icons/form/correct.png" alt="feedback">
+
+                    @if(!email.valid && email.touched){
+                    <label for="name" class="fieldErrorMsg">{{ this.txtService.txtContact.errMail[currentLang]
+                        }}</label>
+                    <img class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
+                    }
+                    @if(email.valid && email.touched){
+                    <img class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+                    }
                 </div>
                 <div class="form-group">
-                    <textarea id="message" name="message" formControlName="message" rows="5" required></textarea>
+                    <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" rows="5"
+                        required></textarea>
                     <label for="message" class="placeholder txtAreaPlace">{{
                         this.txtService.txtContact.inputMsg[currentLang] }}</label>
-                    <label *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" for="name"
-                        class="fieldErrorMsg">{{ this.txtService.txtContact.errMsg[currentLang] }}</label>
-                    <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-                        class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
-                    <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched"
-                        class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+
+                    @if(!message.valid && message.touched){
+                    <label for="name" class="fieldErrorMsg">{{ this.txtService.txtContact.errMsg[currentLang] }}</label>
+                    <img class="fieldImg" src="../../assets/img/icons/form/error.png" alt="feedback">
+                    }
+
+                    @if(message.valid && message.touched){
+                    <img class="fieldImg" src="../../assets/img/icons/form/correct.png" alt="feedback">
+                    }
                 </div>
                 <div class="form-group checkbox">
-                    <input type="checkbox" id="policy" name="policy" formControlName="policy" required checked>
+                    <input #policyCkecked="ngModel" [(ngModel)]="contactData.policyCkecked" type="checkbox" id="policy" name="policy" required checked>
                     <span>{{ this.txtService.txtContact.policy1[currentLang] }}<a href="#">{{
                             this.txtService.txtContact.policy2[currentLang] }}</a>{{
                         this.txtService.txtContact.policy3[currentLang] }}</span>
-                    <label *ngIf="contactForm.get('policy')?.invalid && contactForm.get('policy')?.touched" for="policy"
-                        class="fieldErrorMsg">{{ this.txtService.txtContact.errPolicy[currentLang]
+                    @if(!policyCkecked.valid && policyCkecked.touched){
+                        <label for="policy" class="fieldErrorMsg">{{ this.txtService.txtContact.errPolicy[currentLang]
                         }}</label>
+                    }
                 </div>
-                <button [ngClass]="{ 'btn-active': contactForm.valid}" class="btn-light" type="submit">Send
+                <button class="btn-light" type="submit" [ngClass]="{'btn-active': contactForm.valid}">Send
                     message</button>
             </form>
         </div>
