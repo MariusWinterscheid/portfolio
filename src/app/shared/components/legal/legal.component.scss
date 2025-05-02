@@ -16,6 +16,8 @@
     background-color: rgba($color: $colorInactive, $alpha: 0.8);
 
     transition: all 0.5s ease-in-out;
+
+    text-align: start;
 }
 
 a {
@@ -29,7 +31,7 @@ a {
 .notice-container {
     height: 100dvh;
 
-    max-width: $maxWidthMain;
+    max-width: $maxWidthDesktop;
     padding: $paddingSide;
 
     background-color: $colorBackground;
@@ -68,7 +70,7 @@ a {
     scrollbar-color: $colorHighlight transparent; // statt $colorBackground
 }
 
-@media (min-width: 720px) {
+@media (min-width: $maxWidthDesktop) {
     .notice-container {
         height: 80%;
     }

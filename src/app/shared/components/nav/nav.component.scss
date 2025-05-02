@@ -42,6 +42,8 @@
 
     gap: 35px;
 
+    margin-top: 70px;
+
     .nav-item {
         width: 60%;
         max-width: 580px;
@@ -102,16 +104,16 @@
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    gap: 56px;
+    gap: 8px;
 
-    padding: 0 $paddingSide;
+    padding: 0 $paddingSide $paddingSide $paddingSide;
 
     color: $colorBackground;
 
     z-index: 99;
 
     .nav-bottom-txt {
-        width: 100dvw;
+        width: 100%;
 
         display: flex;
         justify-content: flex-end;
@@ -187,6 +189,6 @@
     .nav-bottom {
         flex-direction: row;
         align-items: flex-end;
-        padding: 0 $paddingSide;
+        padding: 0 $paddingSideDesktop 16px $paddingSideDesktop;
     }
 }

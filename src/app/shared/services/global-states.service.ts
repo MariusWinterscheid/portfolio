@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class GlobalStatesService {
-  private isNavOpen = new BehaviorSubject<boolean>(true);
+  private isNavOpen = new BehaviorSubject<boolean>(false);
   isNavOpen$ = this.isNavOpen.asObservable();
 
   private currentLang = new BehaviorSubject<'en' | 'de'>('en');
@@ -18,9 +18,11 @@ export class GlobalStatesService {
 
   toggleNav() {
     this.isNavOpen.next(!this.isNavOpen.value);
+    this.toggleScroll();
   }
   closeNav() {
     this.isNavOpen.next(false);
+    this.toggleScroll();
   }
 
   switchLang() {
@@ -33,5 +35,19 @@ export class GlobalStatesService {
 
   toggleLegal() {
     this.isLegalOpen.next(!this.isLegalOpen.value);
+    this.toggleScroll();
+  }
+
+  toggleScroll(): void {
+    const body = document.body;
+  
+    const shouldDisableScroll = this.isNavOpen.value || this.isLegalOpen.value;
+  
+    if (shouldDisableScroll) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflowX = 'hidden';
+      body.style.overflowY = 'auto';
+    }
   }
 }
