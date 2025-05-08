@@ -94,7 +94,7 @@ export class TextService {
       de: 'Portfolio'
     },
     'disclaimer': {
-      en: 'Explore a selection of my work here - Interact with my projects to see my sills in action.',
+      en: 'Explore a selection of my work here - Interact with my projects to see my skills in action.',
       de: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.'
     },
     'demoInfo': {

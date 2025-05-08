@@ -48,4 +48,11 @@ export class FooterComponent implements OnInit, OnDestroy {
   openInNewWindow(url: string): void {
     window.open(url, '_blank');
   }
+
+  scrollToId(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

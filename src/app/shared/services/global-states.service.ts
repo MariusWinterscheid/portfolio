@@ -14,6 +14,9 @@ export class GlobalStatesService {
   private isLegalOpen = new BehaviorSubject<boolean>(false);
   isLegalOpen$ = this.isLegalOpen.asObservable();
 
+  private isPrivacyOpen = new BehaviorSubject<boolean>(false);
+  isPrivacyOpen$ = this.isPrivacyOpen.asObservable();
+
   constructor() { }
 
   toggleNav() {
@@ -35,6 +38,11 @@ export class GlobalStatesService {
 
   toggleLegal() {
     this.isLegalOpen.next(!this.isLegalOpen.value);
+    this.toggleScroll();
+  }
+
+  togglePrivacy() {
+    this.isPrivacyOpen.next(!this.isPrivacyOpen.value);
     this.toggleScroll();
   }
 

@@ -18,7 +18,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, OnDestroy {
+  
   txtService = inject(TextService);
   http = inject(HttpClient);
   mailTest = false;
@@ -42,15 +43,23 @@ export class ContactComponent {
   };
 
   currentLang: 'en' | 'de' = 'en';
+  isPrivacyOpen = false;
   private sub: Subscription | null = null;
-
 
   constructor(private statesService: GlobalStatesService) {}
 
   ngOnInit(): void {
-    this.sub = this.statesService.currentLang$.subscribe((lang) => {
+    const subIsLegalOpen = this.statesService.isPrivacyOpen$.subscribe((isPrivacyOpen) => {
+      this.isPrivacyOpen = isPrivacyOpen;
+    });
+
+    const subLang = this.statesService.currentLang$.subscribe((lang) => {
       this.currentLang = lang;
     });
+
+    this.sub = new Subscription();
+    this.sub.add(subIsLegalOpen);
+    this.sub.add(subLang);
   }
   ngOnDestroy(): void {
     if (this.sub) {
@@ -74,5 +83,9 @@ export class ContactComponent {
     } else if (contactForm.submitted && contactForm.form.valid && this.mailTest) {
       contactForm.resetForm();
     }
+  }
+
+  onClickPrivacyLink() {
+    this.statesService.togglePrivacy();
   }
 }

@@ -2,7 +2,6 @@
     <div class="portfolio-main">
         <h2>{{ this.txtService.txtPortfolio.title[currentLang] }}</h2>
         <p>{{ this.txtService.txtPortfolio.disclaimer[currentLang] }}</p>
-        <p><strong>{{ this.txtService.txtPortfolio.demoInfo[currentLang] }}</strong></p>
         <div class="projects-box">
             @for (project of projects; track $index) {
             <div class="project-main">
@@ -24,9 +23,12 @@
                         <div class="project-txt">{{ project.description[currentLang] }}</div>
                         <div class="projeect-btn-box">
                             <div class="project-btn-box">
-<!--                                 <a href="https://github.com/MariusWinterscheid" target="_blank">
+                                <a href="{{ project.git }}" target="_blank">
                                     <button>GitHub</button>
-                                </a> -->
+                                </a>
+                                <a href="{{ project.domain }}" target="_blank">
+                                    <button>Test</button>
+                                </a>
                             </div>
                         </div>
                     </div>

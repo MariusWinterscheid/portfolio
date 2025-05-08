@@ -1,6 +1,6 @@
 @use '../../shared/models/styleVariables.scss' as *;
 
-section{
+section {
     width: 100%;
 
     display: flex;
@@ -69,6 +69,12 @@ section{
             height: auto;
         }
     }
+}
+
+.image-container.show::after {
+    top: 10px;
+    left: 10px;
+    opacity: 1;
 }
 
 @media (min-width:720px) {

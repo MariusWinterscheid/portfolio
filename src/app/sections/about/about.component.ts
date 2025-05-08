@@ -36,4 +36,22 @@ export class AboutComponent implements OnInit, OnDestroy {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, {
+      threshold: 0.5 // 100% sichtbar
+    });
+  
+    const elements = document.querySelectorAll('.image-container');
+    elements.forEach(el => observer.observe(el));
+  }
+
 }

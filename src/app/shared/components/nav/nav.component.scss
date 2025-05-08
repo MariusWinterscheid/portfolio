@@ -29,6 +29,7 @@
 
 .nav-items {
     width: 100%;
+    max-width: $maxWidthDesktop;
 
     font-weight: 700;
     font-size: 45px;
@@ -40,9 +41,10 @@
     justify-content: center;
     flex-direction: column;
 
-    gap: 35px;
+    gap: 16px;
 
     margin-top: 70px;
+    padding: 0 $paddingSide $paddingSide $paddingSide;
 
     .nav-item {
         width: 60%;
@@ -50,7 +52,7 @@
 
         position: relative;
 
-        padding: 24px 32px;
+        padding: 16px 24px;
 
         display: flex;
         align-items: center;
@@ -106,7 +108,7 @@
     flex-direction: column;
     gap: 8px;
 
-    padding: 0 $paddingSide $paddingSide $paddingSide;
+    padding: 30px $paddingSide $paddingSide $paddingSide;
 
     color: $colorBackground;
 
@@ -185,10 +187,30 @@
     }
 }
 
+@media(max-width:400px){
+    h4{
+        font-size: 80%;
+        font-stretch: expanded;
+    }
+}
+@media (max-width: 560px) {
+    .nav-items .nav-item {
+        width: 100%;
+    }
+}
+
+
 @media (min-width: 720px) {
+    .nav-items{
+        gap: 35px;
+    }
+
+    .nav-items .nav-item {
+        padding: 24px 32px;
+    }
     .nav-bottom {
         flex-direction: row;
         align-items: flex-end;
-        padding: 0 $paddingSideDesktop 16px $paddingSideDesktop;
+        padding: 30px $paddingSideDesktop 16px $paddingSideDesktop;
     }
 }

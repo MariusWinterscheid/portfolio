@@ -89,6 +89,7 @@ section{
             font-size: 16px;
             font-weight: 400;
 
+
             &.checkbox {
                 display: flex;
                 align-items: center;
@@ -105,26 +106,22 @@ section{
                     background-color: transparent;
                     border: 2px solid $colorBackground;
                     border-radius: 4px;
-                    width: 18px;
-                    height: 18px;
+                    width: 32px;
+                    height: auto;
+                    aspect-ratio: 1;
                     cursor: pointer;
                     position: relative;
-
-                    &:checked {
-                        background-color: $colorHighlight;
-                        border-color: $colorHighlight;
-                    }
 
                     &:checked::after {
                         content: '';
                         position: absolute;
-                        top: 2px;
-                        left: 6px;
+                        top: 50%;
+                        left: 50%;
                         width: 6px;
                         height: 10px;
                         border: solid $colorBackground;
                         border-width: 0 2px 2px 0;
-                        transform: rotate(45deg);
+                        transform: translate(-50%, -50%) rotate(45deg);
                     }
 
                     .fieldErrorMsg {
@@ -138,8 +135,11 @@ section{
                         transition: all 0.125s ease-in-out;
                     }
                 }
-            }
 
+                &:hover {
+                    cursor: pointer;
+                }
+            }
 
             .placeholder {
                 position: absolute;
@@ -226,6 +226,10 @@ section{
             }
         }
     }
+}
+
+.privacy-link{
+    color: $colorHighlight;
 }
 
 .footer {

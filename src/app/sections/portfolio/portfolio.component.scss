@@ -157,6 +157,9 @@ section{
 
     text-align: start;
 
+    opacity: 0;
+    transition: all 1s ease-in-out;
+
     .project-skillset {
         font-family: 'Overpass', sans-serif;
         font-weight: 400;
@@ -180,6 +183,46 @@ section{
     display: flex;
     gap: 16px;
 }
+
+/* mobile scroll trigger */
+.project.show {
+    .portfolio-img {
+      filter: grayscale(0%);
+    }
+  
+    .arrow-circle {
+      transform: translateY(-50%) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+  
+    .arrow-circle-odd {
+      transform: translateY(-50%) rotate(270deg) scale(1);
+      opacity: 1;
+    }
+  
+    .image-container::after {
+      top: 10px;
+      left: 10px;
+      opacity: 1;
+    }
+
+    .project-txt-box {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  
+    @media (min-width:720px) {
+      .project-txt-box {
+        transform: translateX(140%);
+        opacity: 1;
+      }
+  
+      .project-txt-box-odd {
+        transform: translateX(0);
+      }
+    }
+  }
+  
 
 @media (min-width:720px) {
     .portfolio-main {
@@ -212,6 +255,7 @@ section{
 
     .project-img {
         width: 50%;
+        z-index: 2;
     }
 
     .project-odd {
@@ -232,7 +276,6 @@ section{
     .project-txt-box {
         width: 40%;
         opacity: 1;
-        z-index: -1;
         position: absolute;
         left: 0;
         transition: all 125ms ease-in-out;

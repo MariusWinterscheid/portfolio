@@ -4,6 +4,7 @@ import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { NavComponent } from './shared/components/nav/nav.component';
 import { LegalComponent } from "./shared/components/legal/legal.component";
+import { PrivacyComponent } from './shared/components/privacy/privacy.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { LegalComponent } from "./shared/components/legal/legal.component";
     MainComponent,
     HeaderComponent,
     NavComponent,
-    LegalComponent
+    LegalComponent,
+    PrivacyComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

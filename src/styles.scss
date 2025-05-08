@@ -27,7 +27,7 @@ body {
 
     scroll-behavior: smooth;
 
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 
     font-family: 'Overpass', sans-serif;
     font-weight: 400;
@@ -51,14 +51,15 @@ h4 {
 h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 45px;
+    font-size: 32px;
 }
 
 h2 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
+    white-space: nowrap;
 
     &:hover {
         color: $colorHighlight;
@@ -98,8 +99,11 @@ button {
 
     &:hover {
         cursor: pointer;
-        padding: 20px 80px;
-        font-weight: 700;
+
+        @media (min-width: 720px) {
+            padding: 20px 100px;
+            font-weight: 700;
+        }
     }
 }
 
@@ -175,10 +179,28 @@ button {
     scrollbar-color: transparent transparent;
 }
 
+@media(min-width: 400px) {
+    h2 {
+        font-size: 36px;
+    }
+}
+
+@media(min-width:480px) {
+    h1 {
+        font-size: 45px;
+    }
+}
+
+@media (min-width:520px) {
+    button {
+        padding: 20px 60px;
+    }
+}
+
 @media (min-width:720px) {
     h2 {
         font-weight: 800;
-        font-size: 78px;
+        font-size: 56px;
         text-align: center;
     }
 
@@ -186,12 +208,18 @@ button {
         font-size: 45px;
     }
 
-    button{
+    button {
         padding: 20px 60px;
     }
 }
 
-@media (min-width:1060px){
+@media (min-width:800px) {
+    h2 {
+        font-size: 78px;
+    }
+}
+
+@media (min-width:1060px) {
     h1 {
         font-weight: 800;
         font-size: 128px;
