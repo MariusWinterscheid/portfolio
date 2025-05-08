@@ -28,35 +28,32 @@
 }
 
 .nav-items {
-    width: 100%;
     max-width: $maxWidthDesktop;
-
-    font-weight: 700;
-    font-size: 45px;
 
     flex: 3;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
     gap: 16px;
 
+    font-weight: 700;
+    font-size: 45px;
     margin-top: 70px;
     padding: 0 $paddingSide $paddingSide $paddingSide;
 
     .nav-item {
-        width: 60%;
-        max-width: 580px;
-
-        position: relative;
-
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         padding: 16px 24px;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: max-content;
+        min-width: 100%;
+        position: relative;
+
+        max-width: 580px;
 
         &::before,
         &::after {
@@ -106,7 +103,7 @@
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    gap: 8px;
+    gap: 50px;
 
     padding: 30px $paddingSide $paddingSide $paddingSide;
 
@@ -126,6 +123,7 @@
 
         h4 {
             font-weight: 800;
+            font-size: 45px;
         }
 
         .mail-link {
@@ -187,12 +185,13 @@
     }
 }
 
-@media(max-width:400px){
-    h4{
+@media(max-width:400px) {
+    h4 {
         font-size: 80%;
         font-stretch: expanded;
     }
 }
+
 @media (max-width: 560px) {
     .nav-items .nav-item {
         width: 100%;
@@ -201,13 +200,14 @@
 
 
 @media (min-width: 720px) {
-    .nav-items{
+    .nav-items {
         gap: 35px;
     }
 
     .nav-items .nav-item {
         padding: 24px 32px;
     }
+
     .nav-bottom {
         flex-direction: row;
         align-items: flex-end;

@@ -1,6 +1,6 @@
 @use '../../shared/models/styleVariables.scss' as *;
 
-section{
+section {
     width: 100%;
 
     display: flex;
@@ -47,11 +47,11 @@ section{
     }
 }
 
-.p-odd{
-    text-align: end!important;
+.p-odd {
+    text-align: end !important;
 }
 
-.project-main{
+.project-main {
     width: 100%;
     display: flex;
     align-items: center;
@@ -62,11 +62,13 @@ section{
 .project {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
 
     gap: 16px;
+
+    position: relative;
 
     &:hover .portfolio-img {
         filter: grayscale(0%);
@@ -116,8 +118,12 @@ section{
     }
 }
 
+.project-odd {
+    align-items: flex-end;
+}
+
 .project-img {
-    width: 100%;
+    width: 90%;
 
     position: relative;
 
@@ -129,7 +135,7 @@ section{
 
     .portfolio-img {
         width: 100%;
-        
+
         display: flex;
         filter: grayscale(100%);
     }
@@ -157,8 +163,15 @@ section{
 
     text-align: start;
 
+
     opacity: 0;
-    transition: all 1s ease-in-out;
+    transition: all 125ms ease-in-out;
+
+    @media(max-width: 720px) {
+        transform: translateY(-100%);
+        will-change: transform, opacity;
+        z-index: -1;
+    } 
 
     .project-skillset {
         font-family: 'Overpass', sans-serif;
@@ -179,50 +192,43 @@ section{
     text-align: right;
 }
 
-.project-btn-box{
+.project-btn-box {
     display: flex;
     gap: 16px;
 }
 
 /* mobile scroll trigger */
-.project.show {
-    .portfolio-img {
-      filter: grayscale(0%);
-    }
-  
-    .arrow-circle {
-      transform: translateY(-50%) rotate(0deg) scale(1);
-      opacity: 1;
-    }
-  
-    .arrow-circle-odd {
-      transform: translateY(-50%) rotate(270deg) scale(1);
-      opacity: 1;
-    }
-  
-    .image-container::after {
-      top: 10px;
-      left: 10px;
-      opacity: 1;
-    }
 
-    .project-txt-box {
-      transform: translateX(0);
-      opacity: 1;
+@media (max-width: 720px) {
+    .project.show {
+        .portfolio-img {
+            filter: grayscale(0%);
+        }
+
+        .arrow-circle {
+            transform: translateY(-50%) rotate(0deg) scale(1);
+            opacity: 1;
+        }
+
+        .arrow-circle-odd {
+            transform: translateY(-50%) rotate(270deg) scale(1);
+            opacity: 1;
+        }
+
+        .image-container::after {
+            top: 10px;
+            left: 10px;
+            opacity: 1;
+        }
+
+        .project-txt-box {
+            transform: translateX(0) translateY(0);
+            opacity: 1;
+            z-index: 1;
+        }
     }
-  
-    @media (min-width:720px) {
-      .project-txt-box {
-        transform: translateX(140%);
-        opacity: 1;
-      }
-  
-      .project-txt-box-odd {
-        transform: translateX(0);
-      }
-    }
-  }
-  
+}
+
 
 @media (min-width:720px) {
     .portfolio-main {
@@ -249,7 +255,7 @@ section{
         }
     }
 
-    .project-txt-box-odd{
+    .project-txt-box-odd {
         transform: translateX(140%);
     }
 
@@ -268,6 +274,7 @@ section{
 
     .arrow-circle {
         right: -52.5px !important;
+
         img {
             width: 75px !important;
         }

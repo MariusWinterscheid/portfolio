@@ -115,6 +115,45 @@ section{
 
     .click-txt{
         color: $colorHighlight;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+
+            border: 1px solid $colorHighlight;
+            transition: all 125ms ease-in-out;
+
+            bottom: 0;
+            opacity: 0;
+        }
+
+        &:hover::after{
+            animation: raiseBorder 125ms forwards;
+        }
+    }
+}
+
+@keyframes raiseBorder {
+    0% {
+        opacity: 1;
+        width: 0;
+        left: 0;
+    }
+    50% {
+        opacity: 1;
+        width: 100%;
+        left: 0;
+    }
+    60% {
+        opacity: 1;
+        width: 100%;
+        right: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 40%;
+        right: 0;
     }
 }
 

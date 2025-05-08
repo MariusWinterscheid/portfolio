@@ -39,7 +39,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
         }
       });
     }, {
-      threshold: 0.5 // 100% sichtbar
+      threshold: 0.8
     });
   
     const elements = document.querySelectorAll('.project');
