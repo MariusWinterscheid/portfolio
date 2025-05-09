@@ -1,6 +1,6 @@
 @use '../../shared/models/styleVariables.scss' as *;
 
-section{
+section {
     height: 100dvh;
     width: 100%;
 
@@ -21,7 +21,7 @@ section{
     justify-content: center;
     flex-direction: column;
 
-    > * {
+    >* {
         width: 100%;
 
         display: flex;
@@ -103,10 +103,10 @@ section{
         top: 0;
         right: 0;
         left: 0;
-        
+
         animation: arrowAnimation 2.4s linear infinite;
 
-        img{
+        img {
             width: 50px;
             height: auto;
         }
@@ -126,5 +126,9 @@ section{
 @media (min-width:720px) {
     .hero-main {
         padding: 0 $paddingSideDesktop;
+    }
+
+    .developer-txt {
+        font-size: 48px!important;
     }
 }
