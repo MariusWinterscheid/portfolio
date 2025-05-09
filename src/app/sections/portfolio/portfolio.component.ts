@@ -55,7 +55,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
         de: 'Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Ihre Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.'
       },
       img: 'join.png',
-      domain: 'https://stage.marius-winterscheid.de/join',
+      domain: 'https://stage.marius-winterscheid.de/join/log_in.html',
       git: 'https://github.com/MariusWinterscheid/stageJoin'
     },
     {
