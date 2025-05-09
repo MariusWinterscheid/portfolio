@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,11 @@ export class GlobalStatesService {
   private isPrivacyOpen = new BehaviorSubject<boolean>(false);
   isPrivacyOpen$ = this.isPrivacyOpen.asObservable();
 
+  private isMsgOpen = new BehaviorSubject<boolean>(false);
+  isMsgOpen$ = this.isMsgOpen.asObservable();
+  private msgBg = new BehaviorSubject<'warn' | 'info'>('info');
+  msgBg$ = this.msgBg.asObservable();
+
   constructor() { }
 
   toggleNav() {
@@ -31,10 +36,10 @@ export class GlobalStatesService {
   switchLang() {
     const newLang = this.currentLang.value === 'en' ? 'de' : 'en';
     this.currentLang.next(newLang);
-  } 
+  }
   setLang(lang: 'en' | 'de') {
     this.currentLang.next(lang);
-  } 
+  }
 
   toggleLegal() {
     this.isLegalOpen.next(!this.isLegalOpen.value);
@@ -48,9 +53,9 @@ export class GlobalStatesService {
 
   toggleScroll(): void {
     const body = document.body;
-  
+
     const shouldDisableScroll = this.isNavOpen.value || this.isLegalOpen.value;
-  
+
     if (shouldDisableScroll) {
       body.style.overflow = 'hidden';
     } else {
@@ -58,4 +63,13 @@ export class GlobalStatesService {
       body.style.overflowY = 'auto';
     }
   }
+
+  sendUserFeedback(bg: 'warn' | 'info') {
+  this.msgBg.next(bg);
+  this.isMsgOpen.next(true);
+  setTimeout(() => {
+    this.isMsgOpen.next(false);
+  }, 4000);
+}
+
 }

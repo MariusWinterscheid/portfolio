@@ -186,4 +186,11 @@ export class TextService {
       de: "mailto:connect@marius-winterscheid.de?subject=Anfrage%20zum%20Impressum&body=Sehr%20geehrte%20Damen%20und%20Herren,%0D%0A%0D%0Aich%20habe%20eine%20Anfrage%20zum%20Impressum.%20Bitte%20nehmen%20Sie%20Kontakt%20mit%20mir%20auf.%0D%0A%0D%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen,%0D%0A%5BIhr%20Name%5D"
     }
   }
+
+  userFeedback ={
+    'msg':{
+      en: '[Message]',
+      de: '[Nachricht]'
+    }
+  }
 }

@@ -19,7 +19,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit, OnDestroy {
-  
+
   txtService = inject(TextService);
   http = inject(HttpClient);
   mailTest = false;
@@ -44,9 +44,10 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   currentLang: 'en' | 'de' = 'en';
   isPrivacyOpen = false;
+  msgBg: 'warn' | 'info' = 'warn';
   private sub: Subscription | null = null;
 
-  constructor(private statesService: GlobalStatesService) {}
+  constructor(private statesService: GlobalStatesService) { }
 
   ngOnInit(): void {
     const subIsLegalOpen = this.statesService.isPrivacyOpen$.subscribe((isPrivacyOpen) => {
@@ -57,9 +58,14 @@ export class ContactComponent implements OnInit, OnDestroy {
       this.currentLang = lang;
     });
 
+    const subMsgBg = this.statesService.msgBg$.subscribe((msgBg) => {
+      this.msgBg = msgBg;
+    })
+
     this.sub = new Subscription();
     this.sub.add(subIsLegalOpen);
     this.sub.add(subLang);
+    this.sub.add(subMsgBg);
   }
   ngOnDestroy(): void {
     if (this.sub) {
@@ -77,15 +83,31 @@ export class ContactComponent implements OnInit, OnDestroy {
           },
           error: (error) => {
             console.error(error);
+            this.sentUserFeedback('warn');
           },
-          complete: () => console.info('send post complete'),
+          complete: () => this.sentUserFeedback('info'),
         });
     } else if (contactForm.submitted && contactForm.form.valid && this.mailTest) {
       contactForm.resetForm();
+      this.sentUserFeedback('info');
+    } else {
+      this.sentUserFeedback('warn');
     }
   }
 
   onClickPrivacyLink() {
     this.statesService.togglePrivacy();
+  }
+
+  sentUserFeedback(form: 'warn' | 'info'){
+    if (form==='info'){
+      this.txtService.userFeedback.msg.en = 'Message sent';
+      this.txtService.userFeedback.msg.de = 'Die Nachricht wurde gesendet';
+      this.statesService.sendUserFeedback('info');
+    }else{
+      this.txtService.userFeedback.msg.en = 'Message could not be sent';
+      this.txtService.userFeedback.msg.de = 'Die Nachricht konnte nicht gesendet werden';
+      this.statesService.sendUserFeedback('warn');
+    }
   }
 }

@@ -1,0 +1,11 @@
+<div class="feedback-main">
+    <div class="msg-box">
+        <div class="message" [ngClass]="{
+       'active': isMsgOpen,
+       'bg-warn': msgBg === 'warn',
+       'bg-info': msgBg === 'info'
+     }">
+            {{txtService.userFeedback.msg[currentLang]}}
+        </div>
+    </div>
+</div>
