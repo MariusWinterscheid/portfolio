@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalStatesService } from '../../services/global-states.service';
+import { TextService } from '../../services/text.service';
+
 
 
 @Component({
@@ -12,6 +14,8 @@ import { GlobalStatesService } from '../../services/global-states.service';
   styleUrl: './privacy.component.scss'
 })
 export class PrivacyComponent implements OnInit, OnDestroy {
+
+  txtService = inject(TextService);
 
   isPrivacyOpen = false;
   private sub: Subscription | null = null;

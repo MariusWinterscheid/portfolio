@@ -1,0 +1,16 @@
+{
+  "txtHero": {
+    "mainTitle": {
+      "en": "Frontend Developer",
+      "de": "Frontend Entwickler"
+    },
+    "developer": {
+      "en": "Marius Winterscheid",
+      "de": "Marius Winterscheid"
+    },
+    "callToAction": {
+      "en": "Scroll Down",
+      "de": "Nach Unten Scrollen"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class TextService {
-
   constructor() { }
 
   mailAddressTxt = 'connect@marius-winterscheid.de'
@@ -175,20 +175,20 @@ export class TextService {
 
   txtFooter = {
     'mailTo': {
-      en: "mailto:connect@marius-winterscheid.de?subject=Inquiry%20Regarding%20Your%20Services&body=Dear%20Winterscheid%20EDV%20Team,%0D%0A%0D%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20am%20reaching%20out%20to%20inquire%20about%20your%20services%20and%20would%20appreciate%20the%20opportunity%20to%20discuss%20how%20we%20might%20work%20together.%0D%0A%0D%0APlease%20let%20me%20know%20a%20convenient%20time%20for%20a%20brief%20conversation.%0D%0A%0D%0AThank%20you%20in%20advance%20for%20your%20time.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Contact%20Information]",
-      de: "mailto:connect@marius-winterscheid.de?subject=Anfrage%20zu%20Ihren%20Dienstleistungen&body=Sehr%20geehrtes%20Winterscheid%20EDV-Team,%0D%0A%0D%0Aich%20hoffe,%20dass%20diese%20Nachricht%20Sie%20wohlbehalten%20erreicht.%20Ich%20möchte%20mich%20über%20Ihre%20Dienstleistungen%20informieren%20und%20würde%20mich%20freuen,%20wenn%20wir%20die%20Möglichkeit%20zu%20einem%20Gespräch%20finden%20könnten.%0D%0A%0D%0ABitte%20teilen%20Sie%20mir%20einen%20passenden%20Termin%20für%20ein%20kurzes%20Gespräch%20mit.%0D%0A%0D%0AVielen%20Dank%20im%20Voraus%20für%20Ihre%20Zeit.%0D%0A%0D%0AMit%20freundlichen%20Grüßen,%0D%0A[Ihr%20vollständiger%20Name]%0D%0A[Ihre%20Kontaktinformationen]"
+      en: "mailto:" + this.mailAddressTxt + "?subject=Inquiry%20Regarding%20Your%20Services&body=Dear%20Winterscheid%20EDV%20Team,%0D%0A%0D%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20am%20reaching%20out%20to%20inquire%20about%20your%20services%20and%20would%20appreciate%20the%20opportunity%20to%20discuss%20how%20we%20might%20work%20together.%0D%0A%0D%0APlease%20let%20me%20know%20a%20convenient%20time%20for%20a%20brief%20conversation.%0D%0A%0D%0AThank%20you%20in%20advance%20for%20your%20time.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Contact%20Information]",
+      de: "mailto:" + this.mailAddressTxt + "?subject=Anfrage%20zu%20Ihren%20Dienstleistungen&body=Sehr%20geehrtes%20Winterscheid%20EDV-Team,%0D%0A%0D%0Aich%20hoffe,%20dass%20diese%20Nachricht%20Sie%20wohlbehalten%20erreicht.%20Ich%20möchte%20mich%20über%20Ihre%20Dienstleistungen%20informieren%20und%20würde%20mich%20freuen,%20wenn%20wir%20die%20Möglichkeit%20zu%20einem%20Gespräch%20finden%20könnten.%0D%0A%0D%0ABitte%20teilen%20Sie%20mir%20einen%20passenden%20Termin%20für%20ein%20kurzes%20Gespräch%20mit.%0D%0A%0D%0AVielen%20Dank%20im%20Voraus%20für%20Ihre%20Zeit.%0D%0A%0D%0AMit%20freundlichen%20Grüßen,%0D%0A[Ihr%20vollständiger%20Name]%0D%0A[Ihre%20Kontaktinformationen]"
     }
   }
 
-  txtLegal ={
+  txtLegal = {
     'mailTo': {
-      en: "mailto:connect@marius-winterscheid.de?subject=Inquiry%20of%20Legal%20Notice&body=Dear%20Sir%20or%20Madam,%0D%0A%0D%0AI%20have%20a%20question%20regarding%20legal%20notice.%20Please%20get%20in%20touch%20with%20me.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]",
-      de: "mailto:connect@marius-winterscheid.de?subject=Anfrage%20zum%20Impressum&body=Sehr%20geehrte%20Damen%20und%20Herren,%0D%0A%0D%0Aich%20habe%20eine%20Anfrage%20zum%20Impressum.%20Bitte%20nehmen%20Sie%20Kontakt%20mit%20mir%20auf.%0D%0A%0D%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen,%0D%0A%5BIhr%20Name%5D"
+      en: "mailto:" + this.mailAddressTxt + "?subject=Inquiry%20of%20Legal%20Notice&body=Dear%20Sir%20or%20Madam,%0D%0A%0D%0AI%20have%20a%20question%20regarding%20legal%20notice.%20Please%20get%20in%20touch%20with%20me.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]",
+      de: "mailto:" + this.mailAddressTxt + "?subject=Anfrage%20zum%20Impressum&body=Sehr%20geehrte%20Damen%20und%20Herren,%0D%0A%0D%0Aich%20habe%20eine%20Anfrage%20zum%20Impressum.%20Bitte%20nehmen%20Sie%20Kontakt%20mit%20mir%20auf.%0D%0A%0D%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen,%0D%0A%5BIhr%20Name%5D"
     }
   }
 
-  userFeedback ={
-    'msg':{
+  userFeedback = {
+    'msg': {
       en: '[Message]',
       de: '[Nachricht]'
     }
