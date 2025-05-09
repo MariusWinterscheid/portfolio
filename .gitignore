@@ -38,6 +38,6 @@ testem.log
 /typings
 
 # System files
-/assets/img
+/assets/img/
 .DS_Store
 Thumbs.db
