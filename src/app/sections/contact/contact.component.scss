@@ -7,6 +7,8 @@ section {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    position: relative;
 }
 
 .contact-main {
@@ -22,8 +24,70 @@ section {
     gap: 40px;
 
     color: $colorBackground;
+}
+
+.bg-main {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.bg-top {
+    width: 100%;
+    height: 80px;
+
     position: relative;
-    overflow: hidden;
+
+    background-color: $colorPrimary;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-top-square {
+    width: 200dvw;
+    height: 100dvh;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: $colorBackground;
+
+    transform: rotate(4deg);
+    transform-origin: bottom center;
+}
+
+.bg-square {
+    flex: 1;
+    width: 100%;
+
+    position: relative;
+    z-index: -1;
+
+    background-color: $colorPrimary;
+}
+
+.bg-sqaure-fill{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -50%;
+    z-index: -1;
+
+    background-color: $colorPrimary;
 }
 
 .title {
@@ -32,21 +96,6 @@ section {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 45px;
-}
-
-.bg {
-    width: 200%;
-    height: 200%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $colorPrimary;
-    z-index: -1;
-
-    transform: rotate(4deg);
-    transform-origin: top left;
-
 }
 
 .form-main {
