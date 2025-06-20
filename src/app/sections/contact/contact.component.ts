@@ -101,12 +101,12 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   sentUserFeedback(form: 'warn' | 'info'){
     if (form==='info'){
-      this.txtService.userFeedback.msg.en = 'Message sent';
-      this.txtService.userFeedback.msg.de = 'Die Nachricht wurde gesendet';
+      this.txtService.userFeedback.msg.en = 'Your message has been sent!';
+      this.txtService.userFeedback.msg.de = 'Deine Nachricht wurde erfolgreich gesendet!';
       this.statesService.sendUserFeedback('info');
     }else{
-      this.txtService.userFeedback.msg.en = 'Message could not be sent';
-      this.txtService.userFeedback.msg.de = 'Die Nachricht konnte nicht gesendet werden';
+      this.txtService.userFeedback.msg.en = 'Oops! Something went wrong. Please try again.';
+      this.txtService.userFeedback.msg.de = 'Ups! Etwas ist schiefgelaufen. Bitte versuche es erneut.';
       this.statesService.sendUserFeedback('warn');
     }
   }

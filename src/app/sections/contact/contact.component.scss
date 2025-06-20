@@ -79,7 +79,7 @@ section {
     background-color: $colorPrimary;
 }
 
-.bg-sqaure-fill{
+.bg-sqaure-fill {
     width: 100%;
     height: 100%;
 
@@ -96,6 +96,8 @@ section {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 45px;
+
+    margin-top: 32px;
 }
 
 .form-main {
@@ -146,6 +148,7 @@ section {
                 margin-bottom: 34px;
 
                 input[type="checkbox"] {
+                    outline: none;
                     width: auto;
                     height: auto;
                     margin: 0;
@@ -200,6 +203,10 @@ section {
                     opacity: 0;
                 }
 
+                input[type="checkbox"]:checked::before {
+                    opacity: 1;
+                }
+
                 &:hover {
                     cursor: pointer;
 
@@ -223,6 +230,7 @@ section {
 
             input,
             textarea {
+                outline: none;
                 width: 100%;
 
                 font-family: 'Overpass', serif;

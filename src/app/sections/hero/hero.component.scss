@@ -38,6 +38,8 @@ section {
     .hero-bottom {
         flex: 1;
         flex-direction: row;
+
+        margin-bottom: 30px;
     }
 }
 
@@ -89,6 +91,11 @@ section {
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
+
+    p{
+        margin: 0;
+        text-align: end;
+    }
 }
 
 .arrow-animation {
@@ -106,6 +113,10 @@ section {
 
         animation: arrowAnimation 2.4s linear infinite;
 
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
         img {
             width: 50px;
             height: auto;
@@ -116,10 +127,21 @@ section {
 @keyframes arrowAnimation {
     0% {
         transform: translateY(-100%);
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 1;
+    }
+
+    95% {
+        transform: translateY(300%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateY(200%);
+        transform: translateY(300%);
+        opacity: 0;
     }
 }
 
@@ -130,5 +152,11 @@ section {
 
     .developer-txt {
         font-size: 48px!important;
+    }
+}
+
+@media (max-height: 830px){
+    .mail-transform{
+        max-width: 50px;
     }
 }
