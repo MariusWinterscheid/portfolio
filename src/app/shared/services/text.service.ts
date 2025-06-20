@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 export class TextService {
   constructor() { }
 
-  mailAddressTxt = 'connect@marius-winterscheid.de'
-  mailAddressHtml = 'connect&#64;marius-winterscheid.de'
+  mailAddressTxt = 'info@marius-winterscheid.de'
+  mailAddressHtml = 'info&#64;marius-winterscheid.de'
 
   txtNav = [
     {
