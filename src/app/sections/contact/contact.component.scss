@@ -322,6 +322,24 @@ section {
     padding: $paddingSide 0;
 }
 
+button.no-hover:hover {
+    padding: 20px 40px;
+    font-weight: 400;
+
+}
+
+    @media (min-width:520px) {
+        button.no-hover:hover {
+            padding: 20px 60px;
+        }
+    }
+
+    @media (min-width:720px) {
+        button.no-hover:hover {
+            padding: 20px 60px;
+        }
+    }
+
 @media(min-width: 720px) {
     .contact-main {
         padding: 80px $paddingSideDesktop 0 $paddingSideDesktop;
