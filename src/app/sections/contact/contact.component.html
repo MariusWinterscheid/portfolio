@@ -14,7 +14,7 @@
             <span>{{ this.txtService.txtContact.text[currentLang] }}</span>
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
                 <div class="form-group">
-                    <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required>
+                    <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder=" " required>
                     <label for="name" class="placeholder">{{
                         this.txtService.txtContact.inputName[currentLang] }}</label>
 
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                        required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                        placeholder=" " required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     <label for="email" class="placeholder">{{
                         this.txtService.txtContact.inputMail[currentLang] }}</label>
 
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" rows="5"
-                        required></textarea>
+                        placeholder=" " required></textarea>
                     <label for="message" class="placeholder txtAreaPlace">{{
                         this.txtService.txtContact.inputMsg[currentLang] }}</label>
 

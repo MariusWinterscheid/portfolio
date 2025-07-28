@@ -257,7 +257,8 @@ section {
                 }
 
                 &:valid+.placeholder,
-                &:focus+.placeholder {
+                &:focus+.placeholder,
+                &:not(:placeholder-shown)+.placeholder {
                     top: 20px;
                     background-color: $colorPrimary;
                 }
