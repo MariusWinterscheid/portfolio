@@ -16,7 +16,7 @@
                 </a>
             </div>
             <!-- <div class="legal-note desktop" (click)="openLegal()"><a href="">Imprint</a></div> -->
-             <div class="legal-note desktop"><a href="legal">Imprint</a></div>
+             <div class="legal-note desktop"><a href="legal">{{ this.txtService.txtFooter.imprint[currentLang] }}</a></div>
         </div>
 
         <div class="footer-logo-container">
@@ -26,6 +26,6 @@
         </div>
 
         <!-- <div class="legal-note mobile" (click)="openLegal()">Legal notice</div> -->
-        <div class="legal-note mobile"><a href="legal">Imprint</a></div>
+        <div class="legal-note mobile"><a href="legal">{{ this.txtService.txtFooter.imprint[currentLang] }}</a></div>
     </div>
 </section>

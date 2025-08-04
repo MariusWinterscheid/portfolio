@@ -177,6 +177,10 @@ export class TextService {
     'mailTo': {
       en: "mailto:" + this.mailAddressTxt + "?subject=Inquiry%20Regarding%20Your%20Services&body=Dear%20Winterscheid%20EDV%20Team,%0D%0A%0D%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20am%20reaching%20out%20to%20inquire%20about%20your%20services%20and%20would%20appreciate%20the%20opportunity%20to%20discuss%20how%20we%20might%20work%20together.%0D%0A%0D%0APlease%20let%20me%20know%20a%20convenient%20time%20for%20a%20brief%20conversation.%0D%0A%0D%0AThank%20you%20in%20advance%20for%20your%20time.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Contact%20Information]",
       de: "mailto:" + this.mailAddressTxt + "?subject=Anfrage%20zu%20Ihren%20Dienstleistungen&body=Sehr%20geehrtes%20Winterscheid%20EDV-Team,%0D%0A%0D%0Aich%20hoffe,%20dass%20diese%20Nachricht%20Sie%20wohlbehalten%20erreicht.%20Ich%20möchte%20mich%20über%20Ihre%20Dienstleistungen%20informieren%20und%20würde%20mich%20freuen,%20wenn%20wir%20die%20Möglichkeit%20zu%20einem%20Gespräch%20finden%20könnten.%0D%0A%0D%0ABitte%20teilen%20Sie%20mir%20einen%20passenden%20Termin%20für%20ein%20kurzes%20Gespräch%20mit.%0D%0A%0D%0AVielen%20Dank%20im%20Voraus%20für%20Ihre%20Zeit.%0D%0A%0D%0AMit%20freundlichen%20Grüßen,%0D%0A[Ihr%20vollständiger%20Name]%0D%0A[Ihre%20Kontaktinformationen]"
+    },
+    'imprint': {
+      en: 'Imprint',
+      de: 'Impressum'
     }
   }
 
