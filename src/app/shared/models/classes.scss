@@ -16,3 +16,35 @@
 .color-highlight{
     color: $colorHighlight;
 }
+
+.scroll-container {
+    max-height: 100dvh;
+    overflow-y: auto;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #FFFCF3;
+    border-radius: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #00BC8F;
+    border-radius: 6px;
+    border: 3px solid #FFFCF3;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #4B47FF;
+}
+
+/* Firefox */
+.scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #00BC8F #FFFCF3;
+}
