@@ -3,6 +3,10 @@
 section{
     width: 100%;
 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,9 +15,8 @@ section{
 
 .footer-main {
     width: 100%;
-    max-width: $maxWidthDesktop;
 
-    padding: 24px 0;
+    padding: 24px $paddingSide;
 
     display: flex;
     align-items: center;
@@ -83,7 +86,7 @@ section{
     .footer-main {
         flex-direction: row-reverse;
         justify-content: space-between;
-        padding: 30px 0;
+        padding: 30px $paddingSideDesktop;
     }
 
     .footer-arrowUp{

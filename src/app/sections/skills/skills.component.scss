@@ -175,6 +175,12 @@ section{
     }
 }
 
+@media (min-width: 890px) {
+    .action-txt{
+        flex-direction: row;
+    }
+}
+
 @media (min-width:720px){
     .skills-main {
         padding: 0 $paddingSideDesktop;
@@ -186,9 +192,5 @@ section{
 
     .skills{
         gap: 78px;
-    }
-
-    .action-txt{
-        flex-direction: row;
     }
 }

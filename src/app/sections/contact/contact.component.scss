@@ -15,7 +15,7 @@ section {
     width: 100%;
     max-width: $maxWidthDesktop;
 
-    padding: 80px $paddingSide 0 $paddingSide;
+    padding: 80px $paddingSide 300px $paddingSide;
 
     display: flex;
     align-items: center;
@@ -343,7 +343,7 @@ button.no-hover:hover {
 
 @media(min-width: 720px) {
     .contact-main {
-        padding: 80px $paddingSideDesktop 0 $paddingSideDesktop;
+        padding: 80px $paddingSideDesktop 300px $paddingSideDesktop;
     }
 
     .title {

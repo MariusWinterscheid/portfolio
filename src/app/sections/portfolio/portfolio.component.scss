@@ -171,7 +171,7 @@ section {
         transform: translateY(-100%);
         will-change: transform, opacity;
         z-index: -1;
-    } 
+    }
 
     .project-skillset {
         font-family: 'Overpass', sans-serif;
@@ -199,7 +199,7 @@ section {
 
 /* mobile scroll trigger */
 
-@media (max-width: 720px) {
+@media (max-width: 1070px) {
     .project.show {
         .portfolio-img {
             filter: grayscale(0%);
@@ -227,10 +227,12 @@ section {
             z-index: 1;
         }
     }
+
+    
 }
 
 
-@media (min-width:720px) {
+@media (min-width:1070px) {
     .portfolio-main {
         padding: 0 $paddingSideDesktop;
     }

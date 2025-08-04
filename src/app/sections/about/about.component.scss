@@ -73,13 +73,29 @@ section {
     }
 }
 
+.image-container img{
+    min-width: 320px;
+}
+
 .image-container.show::after {
     top: 10px;
     left: 10px;
     opacity: 1;
 }
 
-@media (min-width:720px) {
+@media (max-width:1200px){
+    h2{
+        font-size: 48px;
+    }
+}
+
+@media (max-width:960px){
+    h2{
+        font-size: 40px;
+    }
+}
+
+@media (min-width:900px) {
     .about-main {
         width: 100%;
         padding: 0;
