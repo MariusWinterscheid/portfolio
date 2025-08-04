@@ -5,6 +5,6 @@ import { LegalComponent } from './shared/components/legal/legal.component';
 
 export const routes: Routes = [
     {path:'', component: MainComponent},
-    {path:'imprint', component: PrivacyComponent},
-    {path:'legal', component: LegalComponent},
+    {path:'privacy', component: PrivacyComponent},
+    {path:'imprint', component: LegalComponent},
 ];
