@@ -234,6 +234,12 @@ button {
 @media (min-width:1060px) {
     h1 {
         font-weight: 800;
+        font-size: 80px;
+    }
+}
+
+@media (min-width:1450px) {
+    h1 {
         font-size: 128px;
     }
 }

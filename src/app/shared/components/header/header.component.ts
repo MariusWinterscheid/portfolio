@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { skip, Subscription } from 'rxjs';
 import { GlobalStatesService } from '../../services/global-states.service';
@@ -25,10 +25,12 @@ const IMAGES_BURGER_MENU_CLOSE = [
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   currentLang: 'en' | 'de' = 'en';
   isNavOpen = false;
   private sub: Subscription | null = null;
+  @ViewChild('headerMain', { static: false }) headerMainRef!: ElementRef<HTMLElement>;
+  private resizeObserver: ResizeObserver | null = null;
 
   constructor(private globalState: GlobalStatesService) { }
 
@@ -49,10 +51,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.sub.add(navSub);
     this.sub.add(langSub);
   }
+
+  ngAfterViewInit(): void {
+    this.updateHeaderHeight();
+    if (typeof ResizeObserver !== 'undefined') {
+      this.resizeObserver = new ResizeObserver(() => this.updateHeaderHeight());
+      this.resizeObserver.observe(this.headerMainRef.nativeElement);
+    }
+
+    window.addEventListener('resize', this.updateHeaderHeightBound);
+  }
   ngOnDestroy(): void {
     if (this.sub) {
       this.sub.unsubscribe();
     }
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+      this.resizeObserver = null;
+    }
+    window.removeEventListener('resize', this.updateHeaderHeightBound);
   }
 
   onClickBurgerMenu() {
@@ -79,6 +96,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
         path = choosenArray[i];
         burgerMenu.src = path;
       }, i * 100);
+    }
+  }
+
+  private updateHeaderHeightBound = () => this.updateHeaderHeight();
+
+  private updateHeaderHeight(): void {
+    try {
+      const headerHeight = this.headerMainRef?.nativeElement?.offsetHeight || 0;
+      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    } catch (e) {
+      // Fail silently if DOM is not available or property cannot be set
     }
   }
 
