@@ -68,7 +68,7 @@ h1 {
 h2 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 24px !important;
     text-align: center;
     white-space: nowrap;
 
@@ -241,5 +241,11 @@ button {
 @media (min-width:1450px) {
     h1 {
         font-size: 128px;
+    }
+}
+
+@media (max-width:400px){
+    button{
+        width: 100%;
     }
 }

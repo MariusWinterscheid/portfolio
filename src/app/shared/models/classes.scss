@@ -1,5 +1,9 @@
 @use '../models/styleVariables.scss' as *;
 
+.w100{
+    width: 100%;
+}
+
 .btn{
     border: 4px solid $colorPrimary;
     padding: 20px 60px;

@@ -73,10 +73,6 @@ section {
     }
 }
 
-.image-container img{
-    min-width: 320px;
-}
-
 .image-container.show::after {
     top: 10px;
     left: 10px;

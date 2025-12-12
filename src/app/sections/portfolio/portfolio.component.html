@@ -21,12 +21,12 @@
                         </div>
                         <div class="project-skillset">{{ project.skillset }}</div>
                         <div class="project-txt">{{ project.description[currentLang] }}</div>
-                        <div class="projeect-btn-box">
-                            <div class="project-btn-box">
-                                <a href="{{ project.git }}" target="_blank">
+                        <div class="projeect-btn-box w100" [ngClass]="{'project-btn-box-odd': $index % 2 === 1 }">
+                            <div class="project-btn-box w100">
+                                <a href="{{ project.git }}" target="_blank" class="w100">
                                     <button>GitHub</button>
                                 </a>
-                                <a href="{{ project.domain }}" target="_blank">
+                                <a href="{{ project.domain }}" target="_blank" class="w100">
                                     <button>Test</button>
                                 </a>
                             </div>
