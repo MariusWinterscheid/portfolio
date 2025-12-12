@@ -7,10 +7,12 @@
     display: none;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     transition: all 0.5s ease-in-out;
 
     text-align: start;
+
 }
 
 a {
@@ -22,28 +24,87 @@ a {
 }
 
 .privacy-container {
-    height: 100dvh;
-
     max-width: $maxWidthDesktop;
     padding: $paddingSide;
 
     background-color: $colorBackground;
-
-    overflow: scroll;
-    overflow-x: hidden;
 }
 
-scrollbar-thumb {
+.bg-main {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.bg-top {
+    width: 100%;
+    height: 80px;
+
+    position: relative;
+
+    background-color: $colorPrimary;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-top-square {
+    width: 200dvw;
+    height: 100dvh;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: $colorBackground;
+
+    transform: rotate(4deg);
+    transform-origin: bottom center;
+}
+
+.bg-square {
+    flex: 1;
+    width: 100%;
+
+    position: relative;
+    z-index: -1;
+
+    background-color: $colorPrimary;
+}
+
+.bg-sqaure-fill {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -50%;
+    z-index: -1;
+
+    background-color: $colorPrimary;
+}
+
+/* scrollbar-thumb {
   background-color: #00BC8F;
   border-radius: 6px;
 }
 
 scrollbar-thumb:hover {
   background-color: #4B47FF;
-}
+} */
 
 
-@media (min-width: $maxWidthDesktop) {
+/* @media (min-width: $maxWidthDesktop) {
     .notice-container {
         height: 80%;
     }
@@ -53,4 +114,4 @@ scrollbar-thumb:hover {
     .privacy-container{
         padding: 30px $paddingSideDesktop;
     }
-}
+} */

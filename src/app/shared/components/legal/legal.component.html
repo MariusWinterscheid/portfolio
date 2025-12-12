@@ -1,6 +1,5 @@
-<!-- <div class="legal-main" [ngClass]="{'active': isLegalOpen}" (click)="onClickLegal()"> -->
-    <div class="legal-main active">
-    <div class="notice-container scroll-container">
+<div class="legal-main active">
+    <div class="notice-container">
         <h3>Impressum</h3>
         <p>Angaben gemäß § 5 DDG</p>
         <p>Marius Winterscheid<br>
@@ -15,9 +14,9 @@
             Telefon: - <br>
             E-Mail: <a href="{{ this.txtService.txtLegal.mailTo[currentLang] }}">
                 {{this.txtService.mailAddressTxt}}
-              </a><br></p>
+            </a><br></p>
         <p><strong>Haftungsausschluss: </strong><br><br>
-            
+
             <strong>Haftung für Inhalte</strong><br><br>
             Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
             Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7
@@ -28,7 +27,7 @@
             bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer
             konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese
             Inhalte umgehend entfernen.<br><br>
-            
+
             <strong>Haftung für Links</strong><br><br>
             Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.
             Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
@@ -38,7 +37,7 @@
             jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von
             Rechtsverletzungen werden wir derartige Links umgehend
             entfernen.
-            
+
             <br><br><strong>Urheberrecht</strong><br><br>
             Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
             Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
@@ -49,7 +48,7 @@
             Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
             Rechtsverletzungen werden wir derartige Inhalte umgehend
             entfernen.<br><br>
-            
+
             <strong>Datenschutz</strong><br><br>
             Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf
             unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden,
@@ -79,8 +78,8 @@
             die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google
             in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck
             einverstanden. -->
-            
-<!--             <br><br><strong>Google AdSense</strong><br><br>
+
+            <!--             <br><br><strong>Google AdSense</strong><br><br>
             Diese Website benutzt Google Adsense, einen Webanzeigendienst der Google Inc., USA (''Google''). Google
             Adsense verwendet sog. ''Cookies'' (Textdateien), die auf Ihrem Computer gespeichert werden und die eine
             Analyse der Benutzung der Website durch Sie ermöglicht. Google Adsense verwendet auch sog. ''Web Beacons''
@@ -100,11 +99,27 @@
             Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die
             Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in
             der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden. -->
-        
+
         </p><br>
-        Erstellt mit <a href="https://impressum-generator.de" target="_blank" rel="dofollow">Impressum-Generator.de</a>, dem Tool für
+        Erstellt mit <a href="https://impressum-generator.de" target="_blank" rel="dofollow">Impressum-Generator.de</a>,
+        dem Tool für
         Impressum und <a href="https://impressum-generator.de/datenschutz-generator" target="_blank"
             rel="dofollow">Datenschutz-Erklärung</a>. Nach einer Vorlage der <a
             href="https://www.kanzlei-hasselbach.de/" target="_blank" rel="dofollow">Kanzlei Hasselbach</a>.
     </div>
+
+    <div style="width: 100%;">
+        <div style="height: 400px; width: 100%; position: relative;">
+            <div class="bg-main">
+                <div class="bg-top">
+                    <div class="bg-top-square"></div>
+                </div>
+                <div class="bg-square">
+                    <div class="bg-sqaure-fill"></div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
 </div>

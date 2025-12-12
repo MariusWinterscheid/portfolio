@@ -3,13 +3,14 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalStatesService } from '../../services/global-states.service';
 import { TextService } from '../../services/text.service';
+import { FooterComponent } from '../footer/footer.component';
 
 
 
 @Component({
   selector: 'app-privacy',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FooterComponent],
   templateUrl: './privacy.component.html',
   styleUrl: './privacy.component.scss'
 })

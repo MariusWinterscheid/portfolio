@@ -3,12 +3,13 @@ import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { GlobalStatesService } from '../../services/global-states.service';
 import { TextService } from '../../services/text.service';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
   selector: 'app-legal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FooterComponent],
   templateUrl: './legal.component.html',
   styleUrl: './legal.component.scss'
 })
