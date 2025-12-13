@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalStatesService } from '../../services/global-states.service';
 import { TextService } from '../../services/text.service';
-import { FooterComponent } from '../footer/footer.component';
 
 
 
 @Component({
   selector: 'app-privacy',
   standalone: true,
-  imports: [CommonModule, FooterComponent],
+  imports: [CommonModule],
   templateUrl: './privacy.component.html',
-  styleUrl: './privacy.component.scss'
+  styleUrl: './privacy.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class PrivacyComponent implements OnInit, OnDestroy {
 
@@ -21,6 +21,8 @@ export class PrivacyComponent implements OnInit, OnDestroy {
   isPrivacyOpen = false;
   private sub: Subscription | null = null;
 
+  currentLang: 'en' | 'de' = 'en';
+
   constructor(private statesService: GlobalStatesService) { }
 
   ngOnInit(): void {
@@ -28,8 +30,13 @@ export class PrivacyComponent implements OnInit, OnDestroy {
       this.isPrivacyOpen = isPrivacyOpen;
     });
 
+    const subLang = this.statesService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+
     this.sub = new Subscription();
     this.sub.add(subIsLegalOpen);
+    this.sub.add(subLang);
   }
   ngOnDestroy(): void {
     if (this.sub) {

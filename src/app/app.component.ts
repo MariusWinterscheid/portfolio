@@ -6,6 +6,7 @@ import { NavComponent } from './shared/components/nav/nav.component';
 import { LegalComponent } from "./shared/components/legal/legal.component";
 import { PrivacyComponent } from './shared/components/privacy/privacy.component';
 import { UserfeedbackComponent } from './shared/components/userfeedback/userfeedback.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { UserfeedbackComponent } from './shared/components/userfeedback/userfeed
     NavComponent,
     LegalComponent,
     PrivacyComponent,
-    UserfeedbackComponent
+    UserfeedbackComponent,
+    FooterComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

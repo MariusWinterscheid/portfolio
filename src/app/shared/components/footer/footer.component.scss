@@ -1,9 +1,9 @@
 @use '../../../shared/models/styleVariables.scss' as *;
 
-section{
+section {
     width: 100%;
 
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
 
@@ -30,7 +30,7 @@ section{
     position: relative;
 }
 
-.footer-arrowUp{
+.footer-arrowUp {
     display: none;
 }
 
@@ -55,7 +55,7 @@ section{
     }
 }
 
-.footer-logo-container{
+.footer-logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,7 +77,81 @@ section{
     display: flex;
 }
 
+.bg-main {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.bg-top {
+    width: 100%;
+    height: 80px;
+
+    position: relative;
+
+    background-color: $colorPrimary;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-top-square {
+    width: 200dvw;
+    height: 200dvh;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: $colorBackground;
+
+    transform: rotate(4deg);
+    transform-origin: bottom center;
+}
+
+.bg-square {
+    flex: 1;
+    width: 100%;
+
+    position: relative;
+    z-index: -1;
+
+    background-color: $colorPrimary;
+}
+
+.bg-sqaure-fill {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -50%;
+    z-index: -1;
+
+    background-color: $colorPrimary;
+}
+
+.placeholder {
+    width: 100%;
+    height: 100px;
+}
+
 @media (min-width: 720px) {
+    .placeholder {
+        width: 100%;
+        height: 280px;
+    }
+
     .desktop {
         display: flex;
     }
@@ -92,7 +166,7 @@ section{
         padding: 30px $paddingSideDesktop;
     }
 
-    .footer-arrowUp{
+    .footer-arrowUp {
         display: block;
         position: absolute;
         top: -100px;
@@ -102,11 +176,11 @@ section{
         }
     }
 
-    .logo{
+    .logo {
         justify-content: flex-start;
     }
 
-    .footer-icons-container{
+    .footer-icons-container {
         display: flex;
         align-items: center;
         flex-direction: column;

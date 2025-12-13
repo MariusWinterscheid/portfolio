@@ -60,7 +60,7 @@
                 <div class="form-group checkbox">
                     <input #policyCkecked="ngModel" [(ngModel)]="contactData.policyCkecked" type="checkbox" id="policy"
                         name="policy" required checked>
-                        <span>{{ this.txtService.txtContact.policy1[currentLang] }}<a href="/privacy/" class="privacy-link">{{
+                        <span>{{ this.txtService.txtContact.policy1[currentLang] }}<a (click)="onClickPrivacy()" [routerLink]="'privacy'" class="privacy-link">{{
                             this.txtService.txtContact.policy2[currentLang] }}</a>{{
                         this.txtService.txtContact.policy3[currentLang] }}</span>
                     @if(!policyCkecked.valid && policyCkecked.touched){

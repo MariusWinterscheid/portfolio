@@ -1,14 +1,15 @@
 import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';  // ← NEU
 import { Subscription } from 'rxjs';
 import { TextService } from '../../services/text.service';
 import { GlobalStatesService } from '../../services/global-states.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],  // ← RouterModule HINZUFÜGEN
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })
@@ -17,9 +18,9 @@ export class NavComponent implements OnInit, OnDestroy {
   isnavOpen = false;
   sub: Subscription | null = null;
   txtService = inject(TextService);
+  private router = inject(Router);  // ← inject()
+  private statesService = inject(GlobalStatesService);  // ← inject()
 
-  constructor(private statesService: GlobalStatesService) {}
-  
   ngOnInit(): void {
     this.sub = this.statesService.currentLang$.subscribe((lang) => {
       this.currentLang = lang;
@@ -28,15 +29,20 @@ export class NavComponent implements OnInit, OnDestroy {
       this.isnavOpen = isNavOpen;
     });
   }
+
   ngOnDestroy(): void {
     if (this.sub) {
       this.sub.unsubscribe();
     }
   }
 
-  clickNavItem(id: string){
+  clickNavItem(id: string) {
     this.statesService.closeNav();
-    this.scrollToId(id);
+    this.statesService.setHideContactForm(false);
+
+    this.router.navigate(['']).then(() => {
+      this.scrollToId(id);
+    });
   }
 
   scrollToId(id: string) {

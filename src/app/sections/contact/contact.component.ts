@@ -6,6 +6,7 @@ import { GlobalStatesService } from '../../shared/services/global-states.service
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,8 @@ import { HttpClient } from '@angular/common/http';
   imports: [
     CommonModule,
     FooterComponent,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
@@ -95,16 +97,22 @@ export class ContactComponent implements OnInit, OnDestroy {
     }
   }
 
-  onClickPrivacyLink() {
-    this.statesService.togglePrivacy();
+  onClickPrivacy() {
+    this.statesService.setHideContactForm(true);
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
-  sentUserFeedback(form: 'warn' | 'info'){
-    if (form==='info'){
+  sentUserFeedback(form: 'warn' | 'info') {
+    if (form === 'info') {
       this.txtService.userFeedback.msg.en = 'Your message has been sent!';
       this.txtService.userFeedback.msg.de = 'Deine Nachricht wurde erfolgreich gesendet!';
       this.statesService.sendUserFeedback('info');
-    }else{
+    } else {
       this.txtService.userFeedback.msg.en = 'Oops! Something went wrong. Please try again.';
       this.txtService.userFeedback.msg.de = 'Ups! Etwas ist schiefgelaufen. Bitte versuche es erneut.';
       this.statesService.sendUserFeedback('warn');

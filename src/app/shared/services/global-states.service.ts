@@ -11,11 +11,14 @@ export class GlobalStatesService {
   private currentLang = new BehaviorSubject<'en' | 'de'>('en');
   currentLang$ = this.currentLang.asObservable();
 
-  private isLegalOpen = new BehaviorSubject<boolean>(false);
-  isLegalOpen$ = this.isLegalOpen.asObservable();
+/*   private isLegalOpen = new BehaviorSubject<boolean>(false);
+  isLegalOpen$ = this.isLegalOpen.asObservable(); */
 
   private isPrivacyOpen = new BehaviorSubject<boolean>(false);
   isPrivacyOpen$ = this.isPrivacyOpen.asObservable();
+
+  private hideContactForm = new BehaviorSubject<boolean>(false);
+  hideContactForm$ = this.hideContactForm.asObservable();
 
   private isMsgOpen = new BehaviorSubject<boolean>(false);
   isMsgOpen$ = this.isMsgOpen.asObservable();
@@ -41,10 +44,14 @@ export class GlobalStatesService {
     this.currentLang.next(lang);
   }
 
-  toggleLegal() {
+  setHideContactForm(hide: boolean) {
+    this.hideContactForm.next(hide);
+  }
+
+/*   toggleLegal() {
     this.isLegalOpen.next(!this.isLegalOpen.value);
     this.toggleScroll();
-  }
+  } */
 
   togglePrivacy() {
     this.isPrivacyOpen.next(!this.isPrivacyOpen.value);
@@ -54,7 +61,7 @@ export class GlobalStatesService {
   toggleScroll(): void {
     const body = document.body;
 
-    const shouldDisableScroll = this.isNavOpen.value || this.isLegalOpen.value;
+    const shouldDisableScroll = this.isNavOpen.value;
 
     if (shouldDisableScroll) {
       body.style.overflow = 'hidden';

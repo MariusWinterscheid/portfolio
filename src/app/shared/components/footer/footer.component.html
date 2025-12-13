@@ -1,4 +1,14 @@
 <section>
+    <div class="bg-main">
+        <div class="bg-top">
+            <div class="bg-top-square"></div>
+        </div>
+        <div class="bg-square">
+            <div class="bg-sqaure-fill"></div>
+        </div>
+    </div>
+    <app-contact [ngClass]="{ 'dp-none': (hideContactForm) }"></app-contact>
+    <div class="placeholder" [ngClass]="{ 'dp-none': (!hideContactForm) }"></div>
     <div class="footer-main">
         <div class="footer-icons-container">
             <div class="footer-arrowUp" (click)="scrollToId('hero')">
@@ -15,8 +25,8 @@
                     <img src="../../assets/img/icons/footer/linkedIn.png" alt="linkedIn">
                 </a>
             </div>
-            <!-- <div class="legal-note desktop" (click)="openLegal()"><a href="">Imprint</a></div> -->
-             <div class="legal-note desktop"><a href="/imprint/">{{ this.txtService.txtFooter.imprint[currentLang] }}</a></div>
+            <div class="legal-note desktop"><a (click)="onClickImprint()" [routerLink]="'imprint'">{{ this.txtService.txtFooter.imprint[currentLang]
+                    }}</a></div>
         </div>
 
         <div class="footer-logo-container">
@@ -24,8 +34,7 @@
             <div class="mobile">{{this.txtService.mailAddressTxt}}</div>
             <div class="desktop">&copy; Marius Winterscheid 2025</div>
         </div>
-
-        <!-- <div class="legal-note mobile" (click)="openLegal()">Legal notice</div> -->
-        <div class="legal-note mobile"><a href="/imprint/">{{ this.txtService.txtFooter.imprint[currentLang] }}</a></div>
+        <div class="legal-note mobile"><a (click)="onClickImprint()" [routerLink]="'imprint'">{{
+                this.txtService.txtFooter.imprint[currentLang] }}</a></div>
     </div>
 </section>
