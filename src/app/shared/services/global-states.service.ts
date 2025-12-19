@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, interval } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,6 @@ export class GlobalStatesService {
 
   private currentLang = new BehaviorSubject<'en' | 'de'>('en');
   currentLang$ = this.currentLang.asObservable();
-
-/*   private isLegalOpen = new BehaviorSubject<boolean>(false);
-  isLegalOpen$ = this.isLegalOpen.asObservable(); */
 
   private isPrivacyOpen = new BehaviorSubject<boolean>(false);
   isPrivacyOpen$ = this.isPrivacyOpen.asObservable();
@@ -25,7 +24,44 @@ export class GlobalStatesService {
   private msgBg = new BehaviorSubject<'warn' | 'info'>('info');
   msgBg$ = this.msgBg.asObservable();
 
-  constructor() { }
+  // Key for local storage
+  private readonly LANG_STORAGE_KEY = 'app.language';
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    // Only load local storage data on the browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadLanguageFromLocalStorage();
+    }
+  }
+
+  private loadLanguageFromLocalStorage(): void {
+    try {
+      const savedLang = localStorage.getItem(this.LANG_STORAGE_KEY);
+      if (savedLang === 'en' || savedLang === 'de') {
+        this.currentLang.next(savedLang as 'en' | 'de');
+      }
+    } catch (e) {
+      console.error('Error loading language from local storage', e);
+    }
+  }
+
+  private saveLanguageToLocalStorage(lang: 'en' | 'de'): void {
+    try {
+      localStorage.setItem(this.LANG_STORAGE_KEY, lang);
+    } catch (e) {
+      console.error('Error saving language to local storage', e);
+    }
+  }
+
+  switchLang() {
+    const newLang = this.currentLang.value === 'en' ? 'de' : 'en';
+    this.currentLang.next(newLang);
+    this.saveLanguageToLocalStorage(newLang);
+  }
+  setLang(lang: 'en' | 'de') {
+    this.currentLang.next(lang);
+    this.saveLanguageToLocalStorage(lang);
+  }
 
   toggleNav() {
     this.isNavOpen.next(!this.isNavOpen.value);
@@ -36,22 +72,9 @@ export class GlobalStatesService {
     this.toggleScroll();
   }
 
-  switchLang() {
-    const newLang = this.currentLang.value === 'en' ? 'de' : 'en';
-    this.currentLang.next(newLang);
-  }
-  setLang(lang: 'en' | 'de') {
-    this.currentLang.next(lang);
-  }
-
   setHideContactForm(hide: boolean) {
     this.hideContactForm.next(hide);
   }
-
-/*   toggleLegal() {
-    this.isLegalOpen.next(!this.isLegalOpen.value);
-    this.toggleScroll();
-  } */
 
   togglePrivacy() {
     this.isPrivacyOpen.next(!this.isPrivacyOpen.value);
@@ -59,8 +82,9 @@ export class GlobalStatesService {
   }
 
   toggleScroll(): void {
-    const body = document.body;
+    if (typeof document === 'undefined') return;
 
+    const body = document.body;
     const shouldDisableScroll = this.isNavOpen.value;
 
     if (shouldDisableScroll) {
@@ -72,11 +96,11 @@ export class GlobalStatesService {
   }
 
   sendUserFeedback(bg: 'warn' | 'info') {
-  this.msgBg.next(bg);
-  this.isMsgOpen.next(true);
-  setTimeout(() => {
-    this.isMsgOpen.next(false);
-  }, 4000);
-}
+    this.msgBg.next(bg);
+    this.isMsgOpen.next(true);
+    setTimeout(() => {
+      this.isMsgOpen.next(false);
+    }, 4000);
+  }
 
 }
