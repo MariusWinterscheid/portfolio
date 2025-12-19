@@ -20,7 +20,7 @@
 
 p {
     margin: 0;
-    font-family: overpass, sans-serif;
+    font-family: 'overpass', sans-serif;
     font-weight: 400;
     font-size: 19px;
     line-height: 120%;
@@ -32,25 +32,33 @@ p {
     line-height: 1.6;
 
     @media (max-width: 990px) {
-      word-break: break-all;
-      font-size: 0.95rem;
+        word-break: break-all;
+        font-size: 0.95rem;
     }
 }
 
-h2{
+h2 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
-    line-height: 1.6;
+    text-align: center;
+
+    font-family: 'syne', sans-serif;
+    font-weight: 800;
+    font-style: 'extrabold';
+    font-size: 30px;
+    line-height: 120%;
+    letter-spacing: 0%;
+
 
     @media (max-width: 990px) {
-      word-break: break-all;
-      font-size: 0.95rem;
+        word-break: break-all;
+        font-size: 0.95rem;
     }
 }
 
 h3 {
-    font-family: overpass, sans-serif;
+    font-family: 'overpass', sans-serif;
     font-weight: 700;
     font-style: bold;
     font-size: 23px;
@@ -67,10 +75,25 @@ span {
     .privacy-main {
         padding: 64px $paddingSideDesktop;
     }
+
+    h2 {
+        font-family: 'syne', sans-serif;
+        font-size: 45px;
+        line-height: 100%;
+        letter-spacing: 1%;
+    }
+
+    h3 {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 33px;
+        line-height: 120%;
+        letter-spacing: 0%;
+    }
 }
 
-@media (max-width:1070px){
-    h2{
-        font-size: 56px!important;
+@media (min-width: 1570px) {
+    h2 {
+        font-size: 78px;
     }
 }
