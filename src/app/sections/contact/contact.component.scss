@@ -214,10 +214,6 @@ section {
                         font-weight: 800;
                     }
                 }
-
-                &:hover input[type="checkbox"]::before {
-                    opacity: 1;
-                }
             }
 
             .placeholder {
@@ -312,7 +308,6 @@ section {
 
 .privacy-link {
     display: inline-block;
-    width: 100px;
     white-space: nowrap;
     color: $colorHighlight;
     transition: all 0.125s ease-in-out;

@@ -58,12 +58,12 @@
                     }
                 </div>
                 <div class="form-group checkbox">
-                    <input #policyCkecked="ngModel" [(ngModel)]="contactData.policyCkecked" type="checkbox" id="policy"
+                    <input #policyChecked="ngModel" [(ngModel)]="contactData.policyChecked" type="checkbox" id="policy"
                         name="policy" required checked>
                         <span>{{ this.txtService.txtContact.policy1[currentLang] }}<a (click)="onClickPrivacy()" [routerLink]="'privacy'" class="privacy-link">{{
                             this.txtService.txtContact.policy2[currentLang] }}</a>{{
                         this.txtService.txtContact.policy3[currentLang] }}</span>
-                    @if(!policyCkecked.valid && policyCkecked.touched){
+                    @if(!policyChecked.valid && policyChecked.touched){
                     <label for="policy" class="fieldErrorMsg">{{ this.txtService.txtContact.errPolicy[currentLang]
                         }}</label>
                     }

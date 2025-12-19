@@ -160,12 +160,12 @@ export class TextService {
       de: "Ich habe die "
     },
     'policy2': {
-      en: 'privacy policy ',
-      de: 'Datenschutzrichtlinie '
+      en: 'privacy policy',
+      de: 'Datenschutzrichtlinie'
     },
     'policy3': {
-      en: 'and agree to the processing of my data as outlined.',
-      de: 'gelesen, und stimme der Verarbeitung meiner Daten wie beschrieben zu.'
+      en: ' and agree to the processing of my data as outlined.',
+      de: ' gelesen, und stimme der Verarbeitung meiner Daten wie beschrieben zu.'
     },
     'errPolicy': {
       en: 'Please accept the privacy policy.',

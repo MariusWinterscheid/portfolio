@@ -54,11 +54,12 @@ export class FooterComponent implements OnInit, OnDestroy {
     window.open(url, '_blank');
   }
 
-  scrollToId(id: string) {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   onClickImprint() {

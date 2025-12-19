@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, interval } from 'rxjs';
 
 
@@ -27,11 +28,26 @@ export class GlobalStatesService {
   // Key for local storage
   private readonly LANG_STORAGE_KEY = 'app.language';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
+  ) {
     // Only load local storage data on the browser
     if (isPlatformBrowser(this.platformId)) {
       this.loadLanguageFromLocalStorage();
+      this.initRouterListener();
     }
+  }
+
+  private initRouterListener(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Close nav and privacy on route change
+        const isBasePath = event.urlAfterRedirects === '/' ||
+        event.urlAfterRedirects === '';
+        this.setHideContactForm(!isBasePath);
+      }
+    });
   }
 
   private loadLanguageFromLocalStorage(): void {

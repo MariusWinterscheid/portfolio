@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { TextService } from '../../shared/services/text.service';
 import { GlobalStatesService } from '../../shared/services/global-states.service';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -13,7 +12,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    FooterComponent,
     FormsModule,
     RouterModule
   ],
@@ -30,7 +28,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     name: '',
     email: '',
     message: '',
-    policyCkecked: false
+    policyChecked: false
   }
 
   post = {
