@@ -30,6 +30,13 @@ export class SkillsComponent {
     }
   }
 
+  scrollToId(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   skills = [
     {
       title: 'Angular',
