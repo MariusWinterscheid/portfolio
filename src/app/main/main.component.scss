@@ -29,3 +29,8 @@
     scrollbar-width: thin;
     scrollbar-color: $colorHighlight transparent; // statt $colorBackground
 }
+
+.hero-center{
+    display: flex;
+    justify-content: center;
+}
