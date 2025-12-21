@@ -1,4 +1,21 @@
-.header-center{
+.header-center {
     display: flex;
     justify-content: center;
+}
+
+.app-layout {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-main-wrapper{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-footer{
+    flex-shrink: 0;
 }
