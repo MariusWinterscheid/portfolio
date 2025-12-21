@@ -1,7 +1,7 @@
 @use '../../../shared/models/styleVariables.scss' as *;
 
 .feedback-main{
-    height: 100dvh;
+    height: 100vh;
     width: 100dvw;
 
     position: fixed;
@@ -35,7 +35,7 @@
 
     color: $colorBackground;
 
-    transform: translateY(50dvh);
+    transform: translateY(50vh);
     transition: all 125ms ease-in-out;
 }
 

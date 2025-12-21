@@ -25,6 +25,11 @@
     display: none !important;
 }
 
+router-outlet + * {
+    display: contents !important;
+}
+
+
 body {
     margin: 0;
     background-color: $colorBackground;
@@ -181,7 +186,7 @@ button {
 }
 
 @media(min-width: 400px) {
-    h3{
+    h3 {
         font-size: 32px;
     }
 }
@@ -221,8 +226,8 @@ button {
     }
 }
 
-@media (max-width:400px){
-    button{
+@media (max-width:400px) {
+    button {
         width: 100%;
     }
 }
